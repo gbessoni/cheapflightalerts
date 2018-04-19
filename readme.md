@@ -1,4 +1,4 @@
-**Cheap Flight Frontend**
+**Cheap Flight Alerts Frontend**
 
 How to install project locally for dev:
 
