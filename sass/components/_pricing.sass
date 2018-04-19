@@ -1,0 +1,64 @@
+.pricing
+
+  .custom-row
+    max-width: 600px
+    margin: 15px auto
+    display: flex
+
+    .custom-col
+      flex-grow: 1
+      padding: 15px
+
+      .pricing-card
+        border: 1px solid $color-gray-light-1
+        height: 100%
+        padding: 1.5rem
+        border-radius: 5px
+
+        h4
+          font-size: 2.2rem
+          font-weight: 700
+
+        span
+          font-size: 2rem
+          color: $color-primary
+          margin: 1rem 0
+          display: block
+
+  .pricing-list
+    max-width: 600px
+    margin: 0 auto
+    text-align: center
+
+    ul
+      display: inline-block
+      wudth: auto
+      text-align: left
+      list-style: none
+      margin: 0
+      padding: 0
+
+      li
+        font-size: 1.8rem
+        line-height: 3.5rem
+
+        i
+          color: $color-green
+          margin-right: 1rem
+
+@media (max-width: 767px)
+  .welcome-pricing
+
+    .pricing-list
+      text-align: left!important
+      padding: 0 15px!important
+
+    .custom-col
+      padding: 0!important
+
+      &:first-child
+        padding-right: 10px!important
+
+    .btn-cta
+      margin-top: 15px!important
+      max-width: 490px

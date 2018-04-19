@@ -1,0 +1,69 @@
+.welcome-airports
+
+  .custom-col
+    flex-grow: 1
+    margin-top: 15px
+
+    h4, ul li
+      text-align: left
+
+    ul
+      list-style: none
+      padding: 0
+      margin: 0
+
+      li
+        line-height: 2.5rem
+
+// Responsiveness
+
+@media (max-width: 992px)
+  .welcome-airports
+
+    .custom-row .custom-col
+      width: 100%
+
+      h4, ul li
+        text-align: center
+
+      h4
+        margin-bottom: 10px
+
+      ul
+        margin-bottom: 15px
+
+@media (max-width: 767px)
+  .welcome-welcome
+
+    .heading-tertiary
+      text-align: left
+
+  .welcome-promo
+
+    .btn-cta
+      margin-top: 0!important
+
+  .welcome-pricing
+
+    .pricing-list
+      text-align: left!important
+      padding: 0 15px!important
+
+    .custom-col
+      padding: 0!important
+
+      &:first-child
+        padding-right: 10px!important
+
+    .btn-cta
+      margin-top: 15px!important
+      max-width: 490px
+
+@media (max-width: 359px)
+  .welcome-pricing
+
+    .custom-col
+      padding: 0!important
+
+      &:first-child
+        padding: 0 0 10px 0!important

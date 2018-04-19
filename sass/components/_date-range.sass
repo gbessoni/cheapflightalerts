@@ -1,0 +1,53 @@
+.date-range
+  margin: 2rem 0
+
+  .has-error .form-control
+    border-color: $color-primary
+
+  &__error
+    color: $color-primary
+    margin-top: 1.5rem
+
+  &__group
+    display: flex
+    justify-content: space-between
+
+  &__select
+    position: relative
+    width: 50%
+
+    &:first-child
+      margin-right: 2rem
+
+    i
+      position: absolute
+      top: calc(50% - 10px)
+      right: 12px
+
+    option:first-of-type
+      cursor: not-allowed!important
+      color: $color-gray
+
+  &__split
+    position: relative
+    text-align: center
+
+    span
+      color: $color-black
+      font-size: $font-size-default
+      font-weight: 700
+      display: inline-block
+      margin: 1rem 0
+      padding: 0 20px
+      background: $color-white
+      z-index: 2
+      position: relative
+
+    &:before
+      content: ""
+      background-color: $color-gray-light-1
+      height: 1px
+      width: 100%
+      position: absolute
+      top: calc(50% - 0.5px)
+      left: 0

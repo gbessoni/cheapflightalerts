@@ -1,0 +1,108 @@
+.preferences
+
+  .heading-primary
+    margin-bottom: 4rem!important
+
+.preferences-form
+  max-width: 800px
+  margin: 0 auto
+
+  .form-group
+
+    .months
+      margin: 2.5rem 0
+      text-align: center
+
+      .form-group
+        margin: 0
+
+      &__split
+        position: relative
+
+        span
+          color: $color-black
+          font-size: $font-size-default
+          font-weight: 700
+          display: inline-block
+          margin: 1rem 0
+          padding: 0 20px
+          background: white
+          z-index: 2
+          position: relative
+
+        &:before
+          content: ""
+          background-color: $color-gray-light-1
+          height: 1px
+          width: 100%
+          position: absolute
+          top: calc(50% - 0.5px)
+          left: 0
+
+
+  &__list
+    margin: 0
+    padding: 0 0 0 5rem
+
+    li
+      list-style-type: decima
+      font-size: $font-size-default
+      color: $color-black
+
+      padding-top: 1rem
+
+      i
+        position: relative
+        top: 1px
+        margin-left: 1rem
+        cursor: pointer
+        color: $color-black
+
+        &:hover
+          color: $color-primary
+
+  .error-text
+    color: $color-primary
+
+  .btn-primary
+    margin-top: 4rem
+
+  &__disabled
+    position: relative
+    padding: 2rem
+    filter: blur(1px)
+
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border: 1px solid $color-gray-light-2
+      border-radius: 4px
+      background-color: rgba($color-gray-light-2, .3)
+      cursor: not-allowed
+
+// Responsiveness
+
+@media (max-width: 399px)
+  .preferences-form
+
+    .btn-primary--link
+      width: 100%
+      font-size: 1.3rem!important
+
+@media (max-width: 767px)
+  .preferences-form
+
+    &__list li
+      padding-top: 1.5rem!important
+
+    .custom-label
+
+      span
+        display: block
+
+    .btn-primary--link
+      width: 100%

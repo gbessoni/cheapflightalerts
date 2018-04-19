@@ -1,0 +1,59 @@
+.btn-cta
+  display: inline-block
+  margin-top: 3rem
+  padding: 1.6rem 2rem 1.4rem
+  background: $color-primary
+  text-transform: uppercase
+  color: $color-white
+  font-size: 1.8rem
+  font-weight: 600
+  border: 1px solid $color-primary
+  border-radius: 1rem
+  outline: none!important
+  transition: all .3s
+
+  &:focus, &:active
+    background-color: $color-primary!important
+    border-color: $color-primary!important
+    box-shadow: none!important
+    color: $color-white!important
+
+  &:hover
+    color: $color-primary
+    background: $color-white
+    border-color: $color-primary
+
+  &:disabled
+    opacity: 0.7
+    cursor: not-allowed
+
+    &:hover
+      background: $color-primary
+      color: $color-white
+
+.btn-primary
+  height: 42px
+  background-color: $color-primary
+  border-color: $color-primary
+  text-transform: uppercase
+  font-weight: 700
+  transition: all .3s
+
+  &:focus, &:active
+    background-color: $color-primary!important
+    border-color: $color-primary!important
+    box-shadow: none!important
+    color: $color-white!important
+
+  &:hover
+    background-color: $color-white
+    border-color: $color-primary
+    color: $color-primary
+
+@media (max-width: 767px)
+  .btn-cta
+    width: 100%!important
+    border-radius: 4px!important
+
+  .btn-primary
+    font-size: 1.6rem!important

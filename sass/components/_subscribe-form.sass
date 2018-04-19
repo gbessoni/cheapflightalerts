@@ -1,0 +1,52 @@
+.subscribe-form
+
+  max-width: 40rem
+  margin: 0 auto
+
+  input
+    width: 100%
+    background: none
+    border: none
+    border-bottom: 2px solid $color-primary
+    border-radius: 0!important
+    outline: none!important
+    font-size: 1.8rem
+    font-weight: 400
+    height: 5rem
+    color: $color-black
+    text-align: center
+
+    &:focus
+      &::placeholder
+        color: transparent
+
+    &::placeholder
+      color: $color-black
+      opacity: 1
+      font-weight: 400
+
+    &:-ms-input-placeholder
+      color: $color-black
+      opacity: 1
+      font-weight: 400
+
+    &:-ms-input-placeholder
+      color: $color-black
+      opacity: 1
+      font-weight: 400
+
+  p
+    color: $color-gray
+    font-size: 1.4rem
+    margin-top: 2.5rem
+
+  &__success-text, &__error-text
+    font-size: $font-size-default!important
+    font-weight: 600!important
+    margin: 1.5rem 0!important
+
+  &__success-text
+    color: $color-green!important
+
+  &__error-text
+    color: $color-primary!important

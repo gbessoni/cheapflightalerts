@@ -1,0 +1,63 @@
+*
+  box-sizing: inherit
+  -webkit-appearance: none
+  -moz-appearance: none
+
+  &::after, &::before
+    box-sizing: inherit
+
+html
+  font-size: 62.5% // 16px
+
+body
+  box-sizing: border-box
+
+.section
+  margin-bottom: 8rem
+
+.custom-row
+  display: flex
+  flex-wrap: wrap
+  margin-right: -15px
+  margin-left: -15px
+
+.link
+  text-decoration: none!important
+  color: $color-primary!important
+  font-weight: 700
+
+  &:hover, &:focus
+    border-bottom: 2px solid $color-primary
+
+.text-under-btn
+  color: $color-gray
+  margin-top: 1.5rem
+
+  .link
+    margin-left: .5rem
+
+.form-group
+  position: relative
+  margin-bottom: 4rem
+
+  &:last-child
+    margin-bottom: 0
+
+  .custom-label
+    font-size: 1.6rem
+    margin-bottom: 1rem
+
+    span
+      color: $color-gray
+
+  .custom-select
+    i
+      position: absolute
+      top: calc(50% - 10px)
+      right: 12px
+
+// Responsiveness
+
+@media (max-width: 767px)
+  html
+    font-size: 50%!important

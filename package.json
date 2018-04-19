@@ -1,0 +1,34 @@
+{
+  "name": "cheapflightalerts",
+  "version": "1.0.0",
+  "description": "Frontend for Cheap Flight Alerts",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start -p 8000",
+    "start:pm2": "next start"
+  },
+  "keywords": [],
+  "author": "Rustam K",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-sass": "^0.1.2",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.5",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "js-cookie": "^2.2.0",
+    "moment": "^2.22.0",
+    "next": "^5.1.0",
+    "next-redux-wrapper": "^1.3.5",
+    "node-sass": "^4.8.3",
+    "react": "^16.2.0",
+    "react-autosuggest": "^9.3.4",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-stripe-elements-universal": "^1.2.0-3",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  }
+}

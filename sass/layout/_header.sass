@@ -1,0 +1,103 @@
+.header
+
+  .navbar
+    background: none
+    background-radius: 0
+    border: none
+    padding: 2rem
+    margin: 0
+
+    a
+      color: $color-black
+      font-weight: 700
+      display: block
+
+      i
+        margin-right: .5rem
+
+      &.navbar-brand
+        font-size: 2rem
+        color: $color-gray-dark
+        height: auto
+        padding: 1rem 2rem
+
+    .navbar-right
+
+      li
+        padding: 0 1rem
+
+        a
+          border-radius: 1rem
+          border: 1px solid $color-gray-light-1
+          background: $color-white
+          padding: 1rem 1.5rem 1rem
+          text-transform: uppercase
+          letter-spacing: .5px
+          transition: all .3s
+
+          &:hover
+            color: $color-primary
+            border-color: $color-primary
+
+          &.premium
+            color: $color-primary
+            border-color: $color-primary
+
+            &:hover
+              background: $color-primary
+              color: $color-white
+
+          &.login
+            color: $color-white
+            background: $color-primary
+            border-color: $color-primary
+
+            &:hover
+              color: $color-primary
+              background: $color-white
+
+// Responsiveness
+
+@media (max-width: 767px)
+  .navbar
+
+    .container
+      padding: 0!important
+
+    .navbar-header
+      padding-bottom: 15px
+
+    .navbar-toggle
+      background: none
+      border: none
+      position: absolute
+      right: 0
+      top: 1.6rem
+
+      &:hover, &:focus
+        background: none
+
+    .navbar-collapse
+      padding: 0!important
+
+    .navbar-right
+      margin: 0!important
+
+      li
+        display: block
+        padding: .5rem 0!important
+
+        &:not(:last-child)
+          border-bottom: 1px solid $color-gray-light-2
+
+        a
+          border: none!important
+          background-color: transparent!important
+          color: $color-gray-dark!important
+
+          &:hover
+            color: $color-primary!important
+
+          i
+            display: inline-block!important
+            color: $color-primary!important

@@ -1,0 +1,56 @@
+.backdrop
+  width: 100%
+  height: 100%
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 100
+  background-color: rgba($color-black, .5)
+
+.custom-modal
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  width: 100%
+  height: 100%
+  z-index: 100
+  transition: transform 1s
+  padding: 15px
+
+  &__content
+    position: relative
+    padding: 15px 20px
+    background-color: $color-white
+    border: 1px solid $color-gray-light-1
+    border-radius: 6px
+    box-shadow: 0 5rem 20rem rgba($color-black, .5)
+    max-width: 500px
+    margin: 5% auto 0
+
+    &__close-icon
+      position: absolute
+      top: 15px
+      right: 15px
+
+      i
+        font-size: 20px
+        color: $color-gray
+        cursor: pointer
+
+    &__close-link
+      display: block
+      margin: 3rem auto 1rem auto
+      cursor: pointer
+      text-align: center
+
+    &__text
+      max-width: 600px
+      margin: 0 auto 3rem 0
+      p
+        font-size: $font-size-default
+        line-height: 2.4rem
+        color: $color-black
+
+    .heading-secondary i
+      font-size: 8rem

@@ -1,0 +1,67 @@
+.subscribe-modal
+
+  .modal-content
+    padding: 0 30px
+
+    .close
+      position: absolute
+      right: 15px
+      top: 15px
+
+    .modal-header
+      border-bottom: none
+      text-align: center
+
+      i.ion-ios-email
+        font-size: 8rem
+        color: $color-primary
+
+      h2
+        font-size: 2.4rem
+        font-weight: 600
+
+      .close
+        margin-top: 0
+        position: relative
+        top: 5px
+
+    .modal-body
+      padding-top: 0
+
+      p
+        font-size: $font-size-default
+        color: $color-black
+        line-height: 2.2rem
+        text-align: justify
+
+      form
+
+        .notification
+          padding-top: 10px
+
+        button
+          margin-top: 15px
+
+    .modal-footer
+      border-top: none
+      text-align: center
+      padding-bottom: 30px
+
+      span
+        cursor: pointer
+
+        &:hover
+          color: $color-primary
+
+// Responsivenes
+
+@media (max-width: 767px)
+  .modal
+
+    .modal-content
+      padding: 0
+
+      .modal-header
+
+        i.ion-ios-email
+          font-size: 5rem

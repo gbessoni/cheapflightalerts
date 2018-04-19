@@ -1,0 +1,51 @@
+.auth-form
+  margin: 8rem auto 0
+  max-width: 400px
+  min-height: calc(100vh - 194px - 11rem)
+
+  &__title-wrap
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    .link
+      font-size: $font-size-default
+      margin-bottom: 3rem
+
+  &__title
+    font-size: 3rem
+    font-weight: 700
+    margin-bottom: 3rem
+
+  .auth-text
+    margin-top: 3rem
+    font-size: $font-size-default
+    color: $color-black
+
+  .error-text
+    color: $color-primary
+
+  .alert-danger
+    background-color: rgba($color-primary, .1)
+    border-color: rgba($color-primary, .2)
+    color: $color-primary
+    font-size: $font-size-default
+    font-weight: 500
+
+    .close:hover
+      color: $color-primary
+
+  // profile
+
+  &--profile
+    text-align: left
+
+.has-error input
+  border-color: $color-primary!important
+
+// Responsiveness
+
+@media (max-width: 767px)
+  .auth-form
+    margin: 0 auto 8rem auto!important
+    min-height: 0

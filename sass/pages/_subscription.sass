@@ -1,0 +1,130 @@
+.subscription
+  min-height: calc(100vh - 112px - 82px - 90px)
+  padding-bottom: 8rem
+
+  .heading-primary
+    margin-bottom: 4rem
+
+    h1
+      font-size: 3rem
+
+  // radios
+
+  &__radios
+    margin-top: 1rem
+    display: flex
+
+  // layout
+
+  &__content
+    max-width: 1000px
+    margin: 0 auto
+    display: flex
+
+  &__total, &__guarantee
+    padding: 1.5rem 2rem
+    border: 1px solid $color-gray-light-1
+    border-radius: 5px
+
+  &__left
+    margin-right: 4rem
+    flex: 1 0
+
+  &__right
+    flex: 0 0 35%
+
+  // total
+
+  &__total
+    margin-bottom: 2rem
+    font-size: $font-size-default
+
+    hr
+      margin: 2rem 0
+
+    &__row
+      display: flex
+      justify-content: space-between
+
+      &:first-child
+        margin-bottom: 1.5rem
+
+      &:last-child
+        margin-top: 1.5rem
+        font-size: 1.4rem
+        color: $color-gray
+
+  // guarantee
+
+  &__guarantee
+    overflow: hidden
+    position: relative
+    min-height: 15rem
+    display: flex
+    align-items: center
+
+    &__image
+      height: 16rem
+      width: auto
+      transform: translate(-3rem, -1rem)
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      opacity: .3
+
+    &__title
+      max-width: 150px
+      display: block
+      margin-left: 14rem
+
+      h4
+        color: $color-black
+        font-size: 2rem
+        font-weight: 700
+        line-height: 1.2
+        margin-bottom: 1.5rem
+
+  .btn-primary
+    height: 5.2rem
+
+  .text-under-btn
+    color: #618a31
+    i
+      margin-right: 4px
+
+// Responsiveness
+
+@media (max-width: 1000px)
+  .subscription
+
+    &__radios
+      flex-direction: column
+
+    &__guarantee
+
+      &__title
+        margin-left: 14rem
+
+        h4
+          font-size: 1.6rem
+
+@media (max-width: 767px)
+  .subscription
+    min-height: 0
+
+@media (max-width: 600px)
+  .subscription
+
+    .heading-primary
+      h1
+        font-size: 3rem!important
+
+    &__content
+      flex-direction: column
+
+    &__left
+      margin-right: 0
+
+    &__total
+      margin: 4rem 0

@@ -1,0 +1,50 @@
+.airport-form
+  margin: 3rem auto
+  max-width: 490px
+  position: relative
+
+  .react-autosuggest
+
+    &__container
+      text-align: left
+
+    &__suggestions-container
+      right: 95px
+
+  .custom-label
+    display: block
+    text-align: left
+
+  input
+
+    &.form-control
+      width: calc(100% - 15px - 80px)
+
+  .btn-primary
+    position: absolute
+    bottom: 1px
+    right: 0
+
+  .alert
+    text-align: left
+
+// Responsiveness
+
+@media (max-width: 767px)
+  .airport-form
+
+    input
+      margin-right: 0!important
+      margin-bottom: 1.5rem
+
+      &.form-control
+        width: 100%!important
+
+    .btn-primary
+      width: 100%
+      position: relative!important
+      top: 0
+      right: 0
+
+    .react-autosuggest__suggestions-container
+      right: 0

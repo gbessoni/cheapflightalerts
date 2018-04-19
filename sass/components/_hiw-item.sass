@@ -1,0 +1,38 @@
+.hiw-item
+  width: 33.33%
+  padding: 0 15px
+  margin-top: 3rem
+
+  &__card
+    text-align: center
+    padding: 15px 15px 25px
+    min-height: 100%
+    display: flex
+    flex-direction: column
+    border-radius: 5px
+    border: 1px solid $color-gray-light-1
+    background: rgba($color-white, 0.4)
+
+    i
+      font-size: 5rem
+
+    h4
+      font-weight: 600
+      font-size: 2rem
+      margin-bottom: 18px
+
+    p
+      font-size: $font-size-default
+
+// Responsiveness
+
+// Responsiveness
+
+@media (max-width: 991px)
+  .hiw-item
+    width: 50%
+
+@media (max-width: 767px)
+  .hiw-item
+    width: 100%
+    margin-top: 15px

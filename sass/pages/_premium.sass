@@ -1,0 +1,70 @@
+.premium-comparison
+
+  .heading-secondary
+    margin-bottom: 4.5rem
+
+  table
+    margin: 0
+
+    tr th
+      border-top: none
+
+    th, td
+      border-color: $color-gray-light-1
+
+    th
+      text-align: center
+
+      a
+        text-transform: uppercase
+        color: $color-primary
+
+    i
+      color: $color-green
+
+.premium-more
+  margin-bottom: 8rem
+
+  .custom-col
+    flex-grow: 1
+    width: 50%
+    padding: 15px
+
+    .more-card
+      text-align: center
+      padding: 1.5rem 1.5rem 2.5rem
+      min-height: 100%
+      display: flex
+      flex-direction: column
+      border-radius: 5px
+      border: 1px solid $color-gray-light-1
+
+      i
+        font-size: 5rem
+        color: $color-primary
+
+      h4
+        font-size: 2rem
+        font-weight: 600
+        margin-bottom: 1.8rem
+
+      p
+        font-size: $font-size-default
+
+// Responsiveness
+
+@media (max-width: 992px)
+  .premium-more
+
+    .custom-row .custom-col
+      width: 100%
+      padding: 0 15px
+
+      &:nth-child(n+2)
+        margin-top: 15px
+
+@media (max-width: 767px)
+  .premium-comparison
+
+    .heading-secondary
+      margin-bottom: 3.5rem!important
