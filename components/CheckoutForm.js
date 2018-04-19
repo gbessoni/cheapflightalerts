@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { StripeProvider, Elements, CardElement } from 'react-stripe-elements-universal';
+import { CardElement, injectStripe } from 'react-stripe-elements-universal';
 import DivWrapper from '../hoc/divWrapper';
 
 class CheckoutForm extends Component {
@@ -15,7 +15,8 @@ class CheckoutForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    alert('API requests will go here');
+
+    console.log('API requests will go here');
   }
 
   render() {
@@ -81,25 +82,21 @@ class CheckoutForm extends Component {
 
           {/* stripe */}
 
-          <StripeProvider apiKey="pk_test_12345">
+          <DivWrapper>
 
-            <Elements>
-              <DivWrapper>
+            <div className="form-group">
+              <label htmlFor="card" className="custom-label">
+                Card details
+              </label>
+              <CardElement
+                hidePostalCode={true}
+                classes={{ base: 'form-control custom-input StripeElement' }}
+              />
+            </div>
 
-                <div className="form-group">
-                  <label htmlFor="card" className="custom-label">
-                    Card details
-                  </label>
-                  <CardElement
-                    hidePostalCode={true}
-                    classes={{ base: 'form-control custom-input StripeElement' }}
-                  />
-                </div>
+          </DivWrapper>
 
-              </DivWrapper>
-            </Elements>
-
-          </StripeProvider>
+          {/* submit */}
 
           <button
             type="submit"
@@ -174,4 +171,4 @@ class CheckoutForm extends Component {
   }
 }
 
-export default CheckoutForm;
+export default injectStripe(CheckoutForm);

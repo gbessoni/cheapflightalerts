@@ -2,7 +2,8 @@ import withRedux from 'next-redux-wrapper';
 import { initStore } from '../redux';
 import initialize from '../utils/initialize';
 import Layout from '../components/Layout';
-import CheckoutForm from '../components/CheckoutForm';
+import { StripeProvider } from 'react-stripe-elements-universal';
+import Checkout from '../components/SubscriptionCheckout';
 
 const Subscription = () => (
   <Layout title="Upgrade to our Premium Membership">
@@ -15,7 +16,9 @@ const Subscription = () => (
         </h1>
       </div>
 
-      <CheckoutForm />
+      <StripeProvider apiKey="pk_test_5EurhPl2SP5YyeluW6cVsKLg">
+        <Checkout />
+      </StripeProvider>
 
     </section>
   </Layout>
