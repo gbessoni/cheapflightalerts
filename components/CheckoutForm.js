@@ -1,12 +1,14 @@
 import { Component } from 'react';
+import axios from 'axios';
+import { API } from '../config';
 import { CardElement, injectStripe } from 'react-stripe-elements-universal';
 import DivWrapper from '../hoc/divWrapper';
 
 class CheckoutForm extends Component {
 
   state = {
-    subscriptionType: '3 Months',
-    cardnumber: ''
+    subscriptionType: 'default-sub-plan',
+    email: ''
   }
 
   handleChange = (e) => {
@@ -16,7 +18,24 @@ class CheckoutForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('API requests will go here');
+    this.props.stripe.createToken({name: 'Test User'}).then(({token}) => {
+
+      const data = {
+        email: this.state.email,
+        plan_id: this.state.subscriptionType,
+        stripe_id: token.id
+      };
+
+      axios.post(`${API}/premium/subscriptions`, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json; version=1'
+        }
+      })
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
+
+    });
   }
 
   render() {
@@ -41,10 +60,10 @@ class CheckoutForm extends Component {
               <input
                 type="radio"
                 name="subscriptionType"
-                value="3 Months"
+                value="default-sub-plan"
                 id="3-months"
                 className="custom-radio-box"
-                checked={this.state.subscriptionType === '3 Months'}
+                checked={this.state.subscriptionType === 'default-sub-plan'}
                 onChange={this.handleChange}
               />
 
@@ -60,10 +79,10 @@ class CheckoutForm extends Component {
               <input
                 type="radio"
                 name="subscriptionType"
-                value="Annually"
+                value="annual"
                 id="annually"
                 className="custom-radio-box"
-                checked={this.state.subscriptionType === 'Annually'}
+                checked={this.state.subscriptionType === 'annual'}
                 onChange={this.handleChange}
               />
 
@@ -77,6 +96,25 @@ class CheckoutForm extends Component {
               </label>
 
             </div>
+
+          </div>
+
+          {/* email */}
+
+          <div className="form-group">
+
+            <label htmlFor="email" className="custom-label">
+              Email
+            </label>
+
+            <input
+              type="email"
+              name="email"
+              value={this.state.email}
+              id="email"
+              className="form-control custom-input"
+              onChange={this.handleChange}
+            />
 
           </div>
 
@@ -122,7 +160,7 @@ class CheckoutForm extends Component {
                 Plan
               </div>
               <div className="subscription__total__column">
-                {subscriptionType === '3 Months' ? 'Every 3 Months' : 'Annually'}
+                {subscriptionType === 'default-sub-plan' ? 'Every 3 Months' : 'Annually'}
               </div>
             </div>
 
@@ -131,7 +169,7 @@ class CheckoutForm extends Component {
                 Price
               </div>
               <div className="subscription__total__column">
-                <b>{subscriptionType === '3 Months' ? '$19.00' : '$49.00'}</b>
+                <b>{subscriptionType === 'default-sub-plan' ? '$19.00' : '$49.00'}</b>
               </div>
             </div>
 
@@ -142,7 +180,7 @@ class CheckoutForm extends Component {
                 <b>Total</b>
               </div>
               <div className="subscription__total__column">
-                <b>{subscriptionType === '3 Months' ? '$19.00' : '$49.00'}</b>
+                <b>{subscriptionType === 'default-sub-plan' ? '$19.00' : '$49.00'}</b>
               </div>
             </div>
 
