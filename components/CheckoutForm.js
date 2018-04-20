@@ -41,6 +41,7 @@ class CheckoutForm extends Component {
     const { email, errors,subscriptionType } = this.state;
 
     if (email === '') errors.email = 'email is required';
+    if (this._element._empty) errors.card = 'card details are required';
 
     this.setState({ errors });
 
@@ -58,8 +59,6 @@ class CheckoutForm extends Component {
           stripe_id: token.id
         };
 
-        console.log(data);
-
         axios.post(`${API}/premium/subscriptions`, data, {
           headers: {
             'Content-Type': 'application/json',
@@ -69,7 +68,6 @@ class CheckoutForm extends Component {
           .then(response => {
             this.setState({
               isError: false,
-              errorMsg: response.status === 404 ? 'No such subscriber! Please make sure you are subscribed.' : 'Oops.. Somtething went wrong. Please try later again.',
               isSuccess: true,
               isProcessing: false
             });
@@ -77,6 +75,7 @@ class CheckoutForm extends Component {
           .catch(error => {
             this.setState({
               isError: true,
+              errorMsg: error.response.status === 404 ? 'No such subscriber! Please make sure you are subscribed.' : 'Oops.. Somtething went wrong. Please try later again.',
               isSuccess: false,
               isProcessing: false
             });
@@ -181,14 +180,20 @@ class CheckoutForm extends Component {
 
           <DivWrapper>
 
-            <div className="form-group">
+            <div className={classnames('form-group', { 'has-error': errors.card })}>
+
               <label htmlFor="card" className="custom-label">
                 Card details
               </label>
+
               <CardElement
                 hidePostalCode={true}
                 classes={{ base: 'form-control custom-input StripeElement' }}
+                elementRef={(element) => this._element = element}
               />
+
+              {errors.card && <p className="error-text">{errors.card}</p>}
+
             </div>
 
           </DivWrapper>
