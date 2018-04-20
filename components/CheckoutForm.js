@@ -42,6 +42,7 @@ class CheckoutForm extends Component {
 
     if (email === '') errors.email = 'email is required';
     if (this._element._empty) errors.card = 'card details are required';
+    if (!this._element._complete) errors.card = 'card details are invalid';
 
     this.setState({ errors });
 
