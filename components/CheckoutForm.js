@@ -3,44 +3,96 @@ import axios from 'axios';
 import { API } from '../config';
 import { CardElement, injectStripe } from 'react-stripe-elements-universal';
 import DivWrapper from '../hoc/divWrapper';
+import Error from '../components/Error';
+import Success from '../components/Success';
+import classnames from 'classnames';
 
 class CheckoutForm extends Component {
 
   state = {
     subscriptionType: 'default-sub-plan',
-    email: ''
+    email: '',
+    isError: false,
+    errorMsg: '',
+    isSuccess: false,
+    isProcessing: false,
+    errors: {}
   }
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    const { errors } = this.state;
+    const input = e.target.name;
+
+    if (errors[input]) {
+
+      let errors = {...errors};
+      delete errors[input];
+
+      this.setState({ [input]: e.target.value, errors });
+
+    } else {
+      this.setState({ [input]: e.target.value });
+    }
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    this.props.stripe.createToken({name: 'Test User'}).then(({token}) => {
+    const { email, errors,subscriptionType } = this.state;
 
-      const data = {
-        email: this.state.email,
-        plan_id: this.state.subscriptionType,
-        stripe_id: token.id
-      };
+    if (email === '') errors.email = 'email is required';
 
-      axios.post(`${API}/premium/subscriptions`, data, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json; version=1'
-        }
-      })
-        .then(response => console.log(response))
-        .catch(error => console.log(error));
+    this.setState({ errors });
 
-    });
+    const isValid = Object.keys(errors).length === 0;
+
+    if (isValid) {
+
+      this.setState({ isProcessing: true });
+
+      this.props.stripe.createToken({name: 'Test User'}).then(({token}) => {
+
+        const data = {
+          email: email,
+          plan_id: subscriptionType,
+          stripe_id: token.id
+        };
+
+        console.log(data);
+
+        axios.post(`${API}/premium/subscriptions`, data, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json; version=1'
+          }
+        })
+          .then(response => {
+            this.setState({
+              isError: false,
+              errorMsg: response.status === 404 ? 'No such subscriber! Please make sure you are subscribed.' : 'Oops.. Somtething went wrong. Please try later again.',
+              isSuccess: true,
+              isProcessing: false
+            });
+          })
+          .catch(error => {
+            this.setState({
+              isError: true,
+              isSuccess: false,
+              isProcessing: false
+            });
+          });
+
+      });
+
+      // scroll on top
+      window.scrollTo(0, 0);
+
+    }
   }
 
   render() {
 
-    const { subscriptionType } = this.state;
+    const { subscriptionType, isError, errorMsg, isSuccess, isProcessing, errors } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit} className="subscription__content">
@@ -48,6 +100,11 @@ class CheckoutForm extends Component {
         {/* left */}
 
         <div className="subscription__left">
+
+          {/* errors */}
+
+          {isError && <Error error={errorMsg} />}
+          {isSuccess && <Success success="You have successfully upgraded your profile!" />}
 
           <div className="form-group">
 
@@ -101,7 +158,7 @@ class CheckoutForm extends Component {
 
           {/* email */}
 
-          <div className="form-group">
+          <div className={classnames('form-group', { 'has-error': errors.email })}>
 
             <label htmlFor="email" className="custom-label">
               Email
@@ -115,6 +172,8 @@ class CheckoutForm extends Component {
               className="form-control custom-input"
               onChange={this.handleChange}
             />
+
+            {errors.email && <p className="error-text">{errors.email}</p>}
 
           </div>
 
@@ -135,12 +194,12 @@ class CheckoutForm extends Component {
           </DivWrapper>
 
           {/* submit */}
-
           <button
             type="submit"
-            className="btn btn-primary btn-block"
+            className={classnames('btn btn-primary btn-block', { 'btn-disabled': isProcessing })}
+            disabled={isProcessing}
           >
-            Purchase
+            {isProcessing ? 'Processing...' : 'Purchase'}
           </button>
 
           <p className="text-under-btn text-center">

@@ -50,6 +50,15 @@
     border-color: $color-primary
     color: $color-primary
 
+.btn-disabled
+  background-color: rgba($color-primary, .9)
+  cursor: not-allowed
+
+  &:hover
+    background-color: rgba($color-primary, .9)!important
+    border-color: rgba($color-primary, .9)!important
+    color: $color-white!important
+
 @media (max-width: 767px)
   .btn-cta
     width: 100%!important
