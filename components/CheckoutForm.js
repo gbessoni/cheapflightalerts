@@ -35,20 +35,23 @@ class CheckoutForm extends Component {
     }
   }
 
+  handleCardChange = (e) => {
+    this.setState({ isCardValid: e.complete });
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { email, errors,subscriptionType } = this.state;
+    const { email, isCardValid, errors, subscriptionType } = this.state;
 
     if (email === '') errors.email = 'email is required';
-    if (this._element._empty) errors.card = 'card details are required';
-    if (!this._element._complete) errors.card = 'card details are invalid';
+    if (this._element._empty) this.setState({ isCardValid: false });
 
     this.setState({ errors });
 
     const isValid = Object.keys(errors).length === 0;
 
-    if (isValid) {
+    if (isValid && isCardValid === true) {
 
       this.setState({ isProcessing: true });
 
@@ -60,7 +63,10 @@ class CheckoutForm extends Component {
           stripe_id: token.id
         };
 
-        axios.post(`${API}/premium/subscriptions`, data, {
+        // clear card details
+        this._element.clear();
+
+        axios.post(`${API}/basic/subscription`, data, {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json; version=1'
@@ -70,7 +76,8 @@ class CheckoutForm extends Component {
             this.setState({
               isError: false,
               isSuccess: true,
-              isProcessing: false
+              isProcessing: false,
+              isCardValid: true
             });
           })
           .catch(error => {
@@ -78,7 +85,8 @@ class CheckoutForm extends Component {
               isError: true,
               errorMsg: error.response.status === 404 ? 'No such subscriber! Please make sure you are subscribed.' : 'Oops.. Somtething went wrong. Please try later again.',
               isSuccess: false,
-              isProcessing: false
+              isProcessing: false,
+              isCardValid: true
             });
           });
 
@@ -92,7 +100,7 @@ class CheckoutForm extends Component {
 
   render() {
 
-    const { subscriptionType, isError, errorMsg, isSuccess, isProcessing, errors } = this.state;
+    const { subscriptionType, isCardValid, isError, errorMsg, isSuccess, isProcessing, errors } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit} className="subscription__content">
@@ -181,7 +189,7 @@ class CheckoutForm extends Component {
 
           <DivWrapper>
 
-            <div className={classnames('form-group', { 'has-error': errors.card })}>
+            <div className={classnames('form-group', { 'has-error': isCardValid === false })}>
 
               <label htmlFor="card" className="custom-label">
                 Card details
@@ -191,9 +199,10 @@ class CheckoutForm extends Component {
                 hidePostalCode={true}
                 classes={{ base: 'form-control custom-input StripeElement' }}
                 elementRef={(element) => this._element = element}
+                onChange={this.handleCardChange}
               />
 
-              {errors.card && <p className="error-text">{errors.card}</p>}
+              {/* {isCardValid === false && <p className="error-text">card details are invalid</p>} */}
 
             </div>
 
