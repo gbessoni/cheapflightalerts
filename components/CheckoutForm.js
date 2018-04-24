@@ -112,7 +112,7 @@ class CheckoutForm extends Component {
           {/* errors */}
 
           {isError && <Error error={errorMsg} />}
-          {isSuccess && <Success success="You have successfully upgraded your profile!" />}
+          {isSuccess && <Success success="Thank you for upgrading to our premium membership. " isFromCheckout={true} />}
 
           <div className="form-group">
 
