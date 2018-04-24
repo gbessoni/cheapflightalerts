@@ -23,10 +23,6 @@ class Success extends Component {
           Please visit this <Link href="/subscription"><a className="link">link</a></Link> to upgrade your account.
         </p>}
 
-        {this.props.isFromEmailConfirm && <p>
-          We've sent you an email with a temporary password so you could <Link href="/login"><a className="link">log in</a></Link>.
-        </p>}
-
       </div>
     );
   }

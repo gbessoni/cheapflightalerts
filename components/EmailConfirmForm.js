@@ -41,7 +41,7 @@ class EmailConfirmForm extends Component {
 
         {isError && <Error error="Oops.. Something went worng." />}
 
-        {isSuccess && <Success success="Your email was confirmed!" isFromEmailConfirm={true} />}
+        {isSuccess && <Success success="Your email was confirmed!" />}
 
         <button type="submit" className="btn btn-cta btn-lg btn-block">Confirm my email</button>
 
