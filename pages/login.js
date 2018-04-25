@@ -95,6 +95,10 @@ class Login extends Component {
           <button type="submit" className="btn btn-primary btn-block">Submit</button>
 
           <p className="auth-text">
+            Forgot your password?  No problem. <Link href="/reset_password"><a className="link">click here</a></Link> to reset your password.
+          </p>
+
+          <p className="auth-text">
             Not a Member yet, <Link href="/"><a className="link">click here</a></Link> to start receiving cheap flight alerts.
           </p>
 

@@ -41,6 +41,12 @@ app.prepare()
       app.render(req, res, actualPath, queryParams);
     });
 
+    server.get('/new_password/:perishable_token', (req, res) => {
+      const actualPath = '/new_password';
+      const queryParams = { perishable_token: req.params.perishable_token };
+      app.render(req, res, actualPath, queryParams);
+    });
+
     server.get('*', (req, res) => {
       return handle(req, res);
     });
