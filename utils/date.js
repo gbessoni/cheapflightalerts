@@ -66,3 +66,11 @@ export function validateDates(date1, date2) {
   return isValid;
 
 }
+
+export function getDateBeforeCurrent(days) {
+  const currentDate = moment();
+
+  const dateBefore = currentDate.subtract(days, 'd');
+
+  return dateBefore.format('LL');
+}

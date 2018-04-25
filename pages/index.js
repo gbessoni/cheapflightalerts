@@ -6,6 +6,7 @@ import SubscribeForm from '../components/SubscribeForm';
 import DealItem from '../components/DealItem';
 import HowItWorksItem from '../components/HowItWorksItem';
 import SubscribeModal from '../components/SubscribeModal';
+import { getDateBeforeCurrent } from '../utils/date';
 
 const Index = () => (
   <Layout title="Home">
@@ -50,7 +51,7 @@ const Index = () => (
 
         <DealItem
           image={'/static/img/deal-item-1.jpg'}
-          date={'March 22, 2018'}
+          date={getDateBeforeCurrent(3)}
           title1="SFO to Bali"
           title2="Normal roundtrip"
           price1="$364"
@@ -59,7 +60,7 @@ const Index = () => (
         />
         <DealItem
           image={'/static/img/deal-item-2.jpg'}
-          date={'March 15, 2018'}
+          date={getDateBeforeCurrent(4)}
           title1="Atlanta to Lima"
           title2="Normal roundtrip"
           price1="$165"
@@ -68,7 +69,7 @@ const Index = () => (
         />
         <DealItem
           image={'/static/img/deal-item-3.jpg'}
-          date={'March 8, 2018'}
+          date={getDateBeforeCurrent(5)}
           title1="NYC to Paris"
           title2="Normal roundtrip"
           price1="$260"
