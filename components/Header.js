@@ -22,14 +22,6 @@ const Header = ({ isAuthenticated, deauthenticate }) => (
           <ul className="nav navbar-nav navbar-right">
 
             <li>
-              {/* <Link href="#"> */}
-              <a className="foreign" href="#" onClick={() => alert('What page should be here?')}>
-                <i className="ion-earth" />
-                Not in USA?
-              </a>
-              {/* </Link> */}
-            </li>
-            <li>
               <Link href="/premium">
                 <a className="premium">
                   <i className="ion-ios-star" />
