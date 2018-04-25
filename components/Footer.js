@@ -7,6 +7,10 @@ const Footer = () => (
         <li><Link href="/about"><a>About</a></Link></li>
 
         <li>
+          <a href="http://cheapflights.helpsite.io/">FAQ</a>
+        </li>
+
+        <li>
           <a href="https://twitter.com/FlightAlertDeal">Twitter</a>
         </li>
         <li>
@@ -15,6 +19,7 @@ const Footer = () => (
         <li>
           <a href="https://www.instagram.com/flightalertdeals/">Instagram</a>
         </li>
+
       </ul>
 
       <div className="footer__copyright">
