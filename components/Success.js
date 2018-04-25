@@ -24,7 +24,7 @@ class Success extends Component {
         </p>}
 
         {this.props.isFromCheckout && <p>
-          Please click here to <Link href="/login"><a className="link">login</a></Link> with your email and your temporary password below. You can update your preferences and start receiving all of our cheap flight deals!
+          You will receive an email wth your temporary password shortly.
         </p>}
 
       </div>
