@@ -272,6 +272,8 @@ class PreferencesForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="preferences-form">
 
+        {isPremium && <h4 className="heading-plan">My plan: {this.props.premiumUser.stripe_plan_id === 'annual' ? 'Annually' : 'Every 3 months'}</h4>}
+
         {isError && <Error error="Oops.. Something went wrong. Please try later." />}
         {isBasicDepartureEmtpy && <Error error="Please enter an airport." />}
         {isPremiumEmailTaken && <Error error="This email is already used." />}

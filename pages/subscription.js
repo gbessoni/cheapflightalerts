@@ -3,6 +3,7 @@ import { initStore } from '../redux';
 import initialize from '../utils/initialize';
 import Layout from '../components/Layout';
 import { StripeProvider } from 'react-stripe-elements-universal';
+import keys from '../config/keys';
 import Checkout from '../components/SubscriptionCheckout';
 
 const Subscription = () => (
@@ -16,7 +17,7 @@ const Subscription = () => (
         </h1>
       </div>
 
-      <StripeProvider apiKey="pk_test_5EurhPl2SP5YyeluW6cVsKLg">
+      <StripeProvider apiKey={keys.stripeKey}>
         <Checkout />
       </StripeProvider>
 

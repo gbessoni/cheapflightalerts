@@ -92,6 +92,8 @@ class ProfileForm extends Component {
           </Link>
         </div>
 
+        <h4 className="heading-plan">My plan: {this.props.user.stripe_plan_id === 'annual' ? 'Annually' : 'Every 3 months'}</h4>
+
         {isError && <Error error="Oops.. Something went worng." />}
         {isSuccess && <Success success="Profile was successfully updated!" />}
 
