@@ -1,0 +1,62 @@
+.testimonial-item
+  width: 33.33%
+  padding: 0 15px
+  margin-top: 3rem
+
+  &__card
+    box-shadow: 0 1px 5px 0 rgba($color-black, .2)
+    border-radius: 5px
+    overflow: hidden
+    background: $color-white
+    display: flex
+    flex-direction: column
+    min-height: 100%
+
+  &__text
+    font-size: $font-size-default
+    line-height: 1.4
+    padding: 1.5rem
+    text-align: justify
+
+  &__author
+    padding: 1.5rem
+    position: relative
+    background-color: rgba($color-black, .8)
+    color: $color-white
+
+    &__icon
+      position: absolute
+      top: -20px
+      right: 10px
+      background-color: $color-white
+      border-radius: 50%
+      color: $color-primary
+      box-shadow: 0 1px 5px 0 rgba($color-black, .3)
+
+      i
+        font-size: 2.5rem
+        line-height: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 1rem
+
+    &__main
+      font-size: $font-size-default
+
+    &__sub
+      display: block
+      margin-top: .5rem
+      text-transform: lowercase
+      font-weight: 700
+
+// Responsiveness
+
+@media (max-width: 991px)
+  .testimonial-item
+    width: 50%
+
+@media (max-width: 767px)
+  .testimonial-item
+    width: 100%
+    margin-top: 15px
