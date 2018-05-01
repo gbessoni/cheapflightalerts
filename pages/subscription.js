@@ -7,7 +7,7 @@ import keys from '../config/keys';
 import Checkout from '../components/SubscriptionCheckout';
 
 const Subscription = () => (
-  <Layout title="Upgrade to our Premium Membership">
+  <Layout title="Cheap Flight Alerts | Upgrade to our Premium Membership">
 
     <section className="subscription">
 

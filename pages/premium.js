@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import Pricing from '../components/Pricing';
 
 const Premium = () => (
-  <Layout title="Premium">
+  <Layout title="Cheap Flight Alerts | Premium">
 
     {/* Welcome */}
 

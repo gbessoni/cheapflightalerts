@@ -74,7 +74,7 @@ class ResetPassword extends Component {
     const { isError, isSuccess, errors } = this.state;
 
     return (
-      <Layout title="Reset password">
+      <Layout title="Cheap Flight Alerts | Reset password">
 
         <form onSubmit={this.handleSubmit} className="auth-form auth-form--reset-password">
 

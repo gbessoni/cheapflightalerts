@@ -9,7 +9,7 @@ import SubscribeModal from '../components/SubscribeModal';
 import {getDateBeforeCurrent} from '../utils/date';
 
 const Index = () => (
-    <Layout title="Home">
+    <Layout title="Cheap Flight Alerts.net: Cheap airfare deals straight to your Inbox">
 
         {/* Welcome */}
 

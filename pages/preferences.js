@@ -10,7 +10,7 @@ const Preferences = ({ premiumUser, premiumToken, basicUser, persistenceToken })
   if (premiumToken || persistenceToken) {
 
     return (
-      <Layout title="Preferences" userEmail={premiumUser && premiumUser.email}>
+      <Layout title="Cheap Flight Alerts | Preferences" userEmail={premiumUser && premiumUser.email}>
 
         <section className="section preferences">
 

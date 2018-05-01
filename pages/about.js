@@ -4,7 +4,7 @@ import initialize from '../utils/initialize';
 import Layout from '../components/Layout';
 
 const About = () => (
-  <Layout title="About">
+  <Layout title="Cheap Flight Alerts | About">
 
     <section className="section about">
 

@@ -9,7 +9,7 @@ const EmailConfirm = ({ persistenceToken }) => {
   if (persistenceToken) {
 
     return (
-      <Layout title="Email confirmation">
+      <Layout title="Cheap Flight Alerts | Email confirmation">
 
         <section className="email-confirmation text-center">
 

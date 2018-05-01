@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 import ProfileForm from '../components/ProfileForm';
 
 const Profile = ({ user, token, error }) => (
-  <Layout title="Profile" userEmail={user.email}>
+  <Layout title="Cheap Flight Alerts | Profile" userEmail={user.email}>
 
     <section className="profile-welcome text-center">
 

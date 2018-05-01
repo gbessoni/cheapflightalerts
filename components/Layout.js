@@ -11,9 +11,9 @@ const Layout = ({ title, children, userEmail }) => (
       <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 
-      <title>CheapFlightAlerts | {title}</title>
+      <title>{title}</title>
 
-      <meta name="description" content="Donec rutrum congue leo eget malesuada." />
+      <meta name="description" content="Cheap Flight Alerts.net: NUMBER 1 For Cheap Flights. LOW AIRFARE On International and Domestic Flights. CHEAP DEALS straight to your inbox!" />
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 

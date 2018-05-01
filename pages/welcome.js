@@ -13,7 +13,7 @@ const Welcome = ({ airport, persistenceToken }) => {
   if (persistenceToken) {
     return (
 
-      <Layout title="Welcome">
+      <Layout title="Cheap Flight Alerts | Welcome">
 
         {/* Welcome */}
 

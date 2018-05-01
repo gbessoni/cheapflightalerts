@@ -60,7 +60,7 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <Layout title="Premium Membership Login">
+      <Layout title="Cheap Flight Alerts | Premium Membership Login">
 
         <form onSubmit={this.handleSubmit} className="auth-form">
 

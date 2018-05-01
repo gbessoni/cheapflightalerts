@@ -9,7 +9,7 @@ const NewPassword = ({ perishableToken }) => {
   if (perishableToken) {
 
     return (
-      <Layout title="New password">
+      <Layout title="Cheap Flight Alerts | New password">
 
         <NewPasswordForm
           perishableToken={perishableToken}
