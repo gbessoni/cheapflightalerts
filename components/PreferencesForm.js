@@ -267,8 +267,6 @@ class PreferencesForm extends Component {
 
     const { isPremium } = this.props;
 
-    console.log('PARENT', this.state.startDate, this.state.finishDate);
-
     return (
       <form onSubmit={this.handleSubmit} className="preferences-form">
 
