@@ -30,7 +30,7 @@ class ProfileForm extends Component {
         plan: response.data.nickname
       }))
       .catch(error => {
-        console.log(error);
+        return error;
       });
 
   }
