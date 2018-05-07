@@ -55,40 +55,54 @@ class CheckoutForm extends Component {
 
       this.setState({ isProcessing: true });
 
-      this.props.stripe.createToken({name: 'Test User'}).then(({token}) => {
+      this.props.stripe.createToken({name: 'Test User'}).then(({token, error}) => {
 
-        const data = {
-          email: email,
-          plan_id: subscriptionType,
-          stripe_id: token.id
-        };
+        if (error) {
 
-        // clear card details
-        this._element.clear();
-
-        axios.post(`${API}/basic/subscription`, data, {
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json; version=1'
-          }
-        })
-          .then(response => {
-            this.setState({
-              isError: false,
-              isSuccess: true,
-              isProcessing: false,
-              isCardValid: true
-            });
-          })
-          .catch(error => {
-            this.setState({
-              isError: true,
-              errorMsg: error.response.status === 404 ? 'No such subscriber! Please make sure you are subscribed.' : 'Oops.. Somtething went wrong. Please try later again.',
-              isSuccess: false,
-              isProcessing: false,
-              isCardValid: true
-            });
+          this.setState({
+            isError: true,
+            errorMsg: error.message,
+            isSuccess: false,
+            isProcessing: false
           });
+
+        } else {
+
+          const data = {
+            email: email,
+            plan_id: subscriptionType,
+            stripe_id: token.id
+          };
+  
+          // clear card details
+          this._element.clear();
+  
+          axios.post(`${API}/basic/subscription`, data, {
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json; version=1'
+            }
+          })
+            .then(response => {
+              this.setState({
+                isError: false,
+                isSuccess: true,
+                isProcessing: false,
+                isCardValid: true
+              });
+            })
+            .catch(error => {
+              console.log(error);
+              this.setState({
+                isError: true,
+                errorMsg: error.response.status === 404 ? 'No such subscriber! Please make sure you are subscribed.' : 'Somtething went wrong. Please try later again.',
+                isSuccess: false,
+                isProcessing: false,
+                isCardValid: true
+              });
+            });
+
+        }
 
       });
 
