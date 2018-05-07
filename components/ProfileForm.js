@@ -14,7 +14,25 @@ class ProfileForm extends Component {
     firstName: this.props.user.first_name || '',
     lastName: this.props.user.last_name || '',
     isError: false,
-    isSuccess: false
+    isSuccess: false,
+    plan: 'Loading...'
+  }
+
+  componentDidMount() {
+
+    axios.get(`${API}/payment_plans/${this.props.user.stripe_plan_id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json; version=1'
+      }
+    })
+      .then(response => this.setState({
+        plan: response.data.nickname
+      }))
+      .catch(error => {
+        console.log(error);
+      });
+
   }
 
   handleChange = (e) => {
@@ -92,7 +110,7 @@ class ProfileForm extends Component {
           </Link>
         </div>
 
-        <h4 className="heading-plan">My plan: {this.props.user.stripe_plan_id === 'annual' ? 'Annually' : 'Every 3 months'}</h4>
+        <h4 className="heading-plan">My plan: {this.state.plan}</h4>
 
         {isError && <Error error="Oops.. Something went worng." />}
         {isSuccess && <Success success="Profile was successfully updated!" />}

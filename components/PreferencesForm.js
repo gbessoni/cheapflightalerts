@@ -30,7 +30,27 @@ class PreferencesForm extends Component {
     isError: false,
     isSuccess: false,
     isBasicDepartureEmtpy: false,
-    isPremiumEmailTaken: false
+    isPremiumEmailTaken: false,
+    plan: 'Loading...'
+  }
+
+  componentDidMount() {
+
+    if (this.props.isPremium) {
+      axios.get(`${API}/payment_plans/${this.props.premiumUser.stripe_plan_id}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json; version=1'
+        }
+      })
+        .then(response => this.setState({
+          plan: response.data.nickname
+        }))
+        .catch(error => {
+          console.log(error);
+        });
+    }
+
   }
 
   handleChange = (e) => {
@@ -270,7 +290,7 @@ class PreferencesForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="preferences-form">
 
-        {isPremium && <h4 className="heading-plan">My plan: {this.props.premiumUser.stripe_plan_id === 'annual' ? 'Annually' : 'Every 3 months'}</h4>}
+        {isPremium && <h4 className="heading-plan">My plan: {this.state.plan}</h4>}
 
         {isError && <Error error="Oops.. Something went wrong. Please try later." />}
         {isBasicDepartureEmtpy && <Error error="Please enter an airport." />}
