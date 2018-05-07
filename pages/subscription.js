@@ -31,16 +31,22 @@ Subscription.getInitialProps = async (ctx) => {
 
   initialize(ctx);
 
-  const response = await axios.get(`${API}/payment_plans`, {
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json; version=1'
-    }
-  });
+  try { 
 
-  return {
-    plan1: response.data[1],
-    plan2: response.data[0]
+    const response = await axios.get(`${API}/payment_plans`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json; version=1'
+      }
+    });
+  
+    return {
+      plan1: response.data[1],
+      plan2: response.data[0]
+    };
+
+  } catch(error) {
+    return error;
   }
 
 };
