@@ -23,6 +23,16 @@ const Layout = ({ title, children, userEmail }) => (
 
       <link rel="stylesheet" href="/_next/static/style.css" />
 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118762882-1"></script>
+
+      <script dangerouslySetInnerHTML={{ __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-118762882-1');
+      `}} />
+
       <script src="https://js.stripe.com/v3/"></script>
 
       <script dangerouslySetInnerHTML={{ __html: `
