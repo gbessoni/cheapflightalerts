@@ -95,7 +95,7 @@ class CheckoutForm extends Component {
               console.log(error);
               this.setState({
                 isError: true,
-                errorMsg: error.response.status === 404 ? 'No such subscriber! Please make sure you are subscribed.' : 'Somtething went wrong. Please try later again.',
+                errorMsg: error.response.status === 404 ? 'No such subscriber! Please make sure you are subscribed.' : 'Something went wrong. Please try later again.',
                 isSuccess: false,
                 isProcessing: false,
                 isCardValid: true
