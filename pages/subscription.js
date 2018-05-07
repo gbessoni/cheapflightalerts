@@ -1,4 +1,6 @@
 import withRedux from 'next-redux-wrapper';
+import axios from 'axios';
+import { API } from '../config';
 import { initStore } from '../redux';
 import initialize from '../utils/initialize';
 import Layout from '../components/Layout';
@@ -6,7 +8,7 @@ import { StripeProvider } from 'react-stripe-elements-universal';
 import keys from '../config/keys';
 import Checkout from '../components/SubscriptionCheckout';
 
-const Subscription = () => (
+const Subscription = ({ plan1, plan2 }) => (
   <Layout title="Cheap Flight Alerts | Upgrade to our Premium Membership">
 
     <section className="subscription">
@@ -18,15 +20,29 @@ const Subscription = () => (
       </div>
 
       <StripeProvider apiKey={keys.stripeKey}>
-        <Checkout />
+        <Checkout plan1={plan1} plan2={plan2} />
       </StripeProvider>
 
     </section>
   </Layout>
 );
 
-Subscription.getInitialProps = function(ctx) {
+Subscription.getInitialProps = async (ctx) => {
+
   initialize(ctx);
+
+  const response = await axios.get(`${API}/payment_plans`, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json; version=1'
+    }
+  });
+
+  return {
+    plan1: response.data[1],
+    plan2: response.data[0]
+  }
+
 };
 
 export default withRedux(initStore)(Subscription);

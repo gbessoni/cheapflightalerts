@@ -10,13 +10,15 @@ import classnames from 'classnames';
 class CheckoutForm extends Component {
 
   state = {
-    subscriptionType: 'default-sub-plan',
+    subscriptionType: this.props.plan1 && this.props.plan1.id || '',
     email: '',
     isError: false,
     errorMsg: '',
     isSuccess: false,
     isProcessing: false,
-    errors: {}
+    errors: {},
+    plan1: this.props.plan1 || '',
+    plan2: this.props.plan2 || ''
   }
 
   handleChange = (e) => {
@@ -114,7 +116,7 @@ class CheckoutForm extends Component {
 
   render() {
 
-    const { subscriptionType, isCardValid, isError, errorMsg, isSuccess, isProcessing, errors } = this.state;
+    const { subscriptionType, plan1, plan2, isCardValid, isError, errorMsg, isSuccess, isProcessing, errors } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit} className="subscription__content">
@@ -136,41 +138,45 @@ class CheckoutForm extends Component {
 
             <div className="subscription__radios">
 
+              {/* plan 1 */}
+
               <input
                 type="radio"
                 name="subscriptionType"
-                value="default-sub-plan"
+                value={plan1.id}
                 id="3-months"
                 className="custom-radio-box"
-                checked={this.state.subscriptionType === 'default-sub-plan'}
+                checked={this.state.subscriptionType === plan1.id}
                 onChange={this.handleChange}
               />
 
               <label className="custom-radio-box__label" htmlFor="3-months">
                 <span className="custom-radio-box__label__visible">
-                  3 MONTHS $19
+                  {plan1.nickname}
                 </span>
                 <span className="custom-radio-box__label__invisible">
-                  Only $6.33 per month
+                  Only ${(plan1.amount * 0.01 / 3).toFixed(2)} per month
                 </span>
               </label>
+
+              {/* plan 2 */}
 
               <input
                 type="radio"
                 name="subscriptionType"
-                value="annual"
+                value={plan2.id}
                 id="annually"
                 className="custom-radio-box"
-                checked={this.state.subscriptionType === 'annual'}
+                checked={this.state.subscriptionType === plan2.id}
                 onChange={this.handleChange}
               />
 
               <label className="custom-radio-box__label" htmlFor="annually">
                 <span className="custom-radio-box__label__visible">
-                  Annually $49 (save 55%)
+                  {plan2.nickname}
                 </span>
                 <span className="custom-radio-box__label__invisible">
-                  Only $4.08 per month
+                  Only ${(plan2.amount * 0.01 / 12).toFixed(2)} per month
                 </span>
               </label>
 
@@ -248,7 +254,7 @@ class CheckoutForm extends Component {
                 Plan
               </div>
               <div className="subscription__total__column">
-                {subscriptionType === 'default-sub-plan' ? 'Every 3 Months' : 'Annually'}
+                {subscriptionType === plan1.id ? plan1.nickname : plan2.nickname}
               </div>
             </div>
 
@@ -257,7 +263,7 @@ class CheckoutForm extends Component {
                 Price
               </div>
               <div className="subscription__total__column">
-                <b>{subscriptionType === 'default-sub-plan' ? '$19.00' : '$49.00'}</b>
+                <b>${subscriptionType === plan1.id ? (plan1.amount * 0.01).toFixed(2) : (plan2.amount * 0.01).toFixed(2)}</b>
               </div>
             </div>
 
@@ -268,7 +274,7 @@ class CheckoutForm extends Component {
                 <b>Total</b>
               </div>
               <div className="subscription__total__column">
-                <b>{subscriptionType === 'default-sub-plan' ? '$19.00' : '$49.00'}</b>
+                <b>${subscriptionType === plan1.id ? (plan1.amount * 0.01).toFixed(2) : (plan2.amount * 0.01).toFixed(2)}</b>
               </div>
             </div>
 
