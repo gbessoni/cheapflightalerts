@@ -57,7 +57,7 @@ class CheckoutForm extends Component {
 
       this.setState({ isProcessing: true });
 
-      this.props.stripe.createToken({name: 'Test User'}).then(({token, error}) => {
+      this.props.stripe.createToken({name: 'Free User'}).then(({token, error}) => {
 
         if (error) {
 
