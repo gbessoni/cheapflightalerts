@@ -164,7 +164,7 @@ const Index = () => (
                         </div>
 
                         <div className="testimonial-item__text">
-                            I can't thank you enough! I have been watching fares to Sydney like a hawk for nearly 25
+                            I can't thank you enough! I have been watching fares to Sydney like a hawk for nearly 5
                             years and this is the absolute lowest I've even seen them. It's good to know that when you
                             send fare alerts, they're the real deal!
                         </div>
@@ -191,7 +191,7 @@ const Index = () => (
                         </div>
 
                         <div className="testimonial-item__text">
-                            We booked a trip to Dublin, Ireland for later this year on a Dollar Flight Club fare alert
+                            We booked a trip to Dublin, Ireland for later this year on a Cheap Flight Alerts fare alert
                             :) I saved about $1,500 on four tickets for the family. We're so excited. Thanks so much for
                             a great service and doing what your team does!
                         </div>
