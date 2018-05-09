@@ -28,7 +28,13 @@ const Welcome = ({ airport, persistenceToken }) => {
 
           <div className="heading-tertiary text-center">
             <h3>
-              You will receive a confirmation email with some basic instructions  on email delivery, what our deals look like and how many you should receive daily.
+              First, please check your email to confirm you want to receive cheap flight alerts to the address provided.
+            </h3>
+          </div>
+
+          <div className="heading-tertiary text-center">
+            <h3> 
+              Second, <b>IMPORTANT</b>: Please enter in your preferred departure airport (we cannot deliver cheap flight deals until you've entered in your local airport).
             </h3>
           </div>
 
