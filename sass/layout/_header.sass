@@ -2,7 +2,6 @@
 
   .navbar
     background: none
-    background-radius: 0
     border: none
     padding: 2rem
     margin: 0
@@ -11,9 +10,6 @@
       color: $color-black
       font-weight: 700
       display: block
-
-      i
-        margin-right: .5rem
 
       &.navbar-brand
         font-size: 2rem
@@ -27,7 +23,7 @@
         padding: 0 1rem
 
         a
-          border-radius: 1rem
+          border-radius: $border-radius-default
           border: 1px solid $color-gray-light-1
           background: $color-white
           padding: 1rem 1.5rem 1rem
@@ -42,10 +38,19 @@
           &.premium
             color: $color-primary
             border-color: $color-primary
+            padding: .8rem 1.6rem .8rem 2.3rem
+
+            img
+              position: relative
+              top: -.15rem
+              left: -.8rem
 
             &:hover
               background: $color-primary
               color: $color-white
+
+              img
+                filter: brightness(0) invert(1)
 
           &.login
             color: $color-white
@@ -98,6 +103,5 @@
           &:hover
             color: $color-primary!important
 
-          i
-            display: inline-block!important
-            color: $color-primary!important
+            img
+              filter: none!important

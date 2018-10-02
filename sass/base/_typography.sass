@@ -2,23 +2,31 @@ h1, h2, h3, h4, p
   margin: 0
 
 body
-  font-family: 'Nunito', sans-serif
+  font-family: 'Roboto', sans-serif
 
 .heading-primary
   margin: 9rem 0 3rem 0
 
   h1
     text-transform: uppercase
+    font-family: 'Nunito', sans-serif
+    font-size: 3rem
+    font-weight: 800
+    line-height: 1.47
     color: $color-black
-    font-size: 4rem
-    font-weight: 700
-    line-height: 4.8rem
+
+  b
+    font-weight: 800
 
   span
     display: block
-    margin-top: 1rem
+    margin-top: .5rem
+    text-transform: uppercase
+    font-family: 'Roboto', sans-serif
+    font-size: 2rem
+    font-weight: 400
+    line-height: 1.5
     color: $color-primary
-    font-size: 3rem
 
   &--premium
 
@@ -29,44 +37,56 @@ body
       color: $color-black
 
 .heading-secondary
-  margin-bottom: 3rem
-
-  i
-    color: $color-primary
-    font-size: 6rem
+  margin-bottom: 2rem
 
   h2
-    color: $color-black
+    font-family: 'Nunito', sans-serif
     font-size: 3rem
-    font-weight: 500
-    line-height: 3.8rem
+    font-weight: 300
+    line-height: 1.47
+    color: $color-black
+
+  b
+    font-weight: 700
+
+  span
+    display: block
+    margin-top: .5rem
+    text-transform: capitalize
+    font-family: 'Roboto', sans-serif
+    font-size: 2rem
+    font-weight: 400
+    line-height: 1.5
+    color: $color-black
+
+  .heading-decor
+    text-transform: uppercase
+    font-family: 'Nunito', sans-serif
+    font-size: $font-size-default
+    font-weight: 400
+    line-height: 1.57
+    color: $color-primary
 
   &--bold
     h2
       font-weight: 700
 
+  &--extra-bold
+    h2
+      font-weight: 800
+
 .heading-tertiary
-  margin-bottom: 1.5rem!important
-  max-width: 700px
   margin: 0 auto
 
   &:last-child
     margin-bottom: 3rem!important
 
   h3
-    color: $color-black
-    font-size: 2rem
-    line-height: 2.8rem
-
-.heading-quaternary
-
-  &:not(:last-child)
-    margin: 3rem 0 1.5rem 0
-
-  h4
-    color: $color-black
+    font-family: 'Roboto', sans-serif
     font-size: 1.8rem
-    font-weight: 700
+    font-weight: 500
+    line-height: 1.56
+    color: $color-black
 
     i
       color: $color-primary
@@ -96,7 +116,6 @@ body
 
     h1
       font-size: 3.5rem!important
-      line-height: 4.3rem!important
 
     span
-      font-size: 2.5rem
+      font-size: 2.5rem!important

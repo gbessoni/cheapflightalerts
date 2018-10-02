@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-const Pricing = ({withIcon, showBtn}) => (
+const Pricing = ({showBtn}) => (
     <section className="section pricing">
         <div className="container">
 
             <div className="heading-secondary heading-secondary--bold text-center">
-                {withIcon && <i className="ion-thumbsup hidden-xs"/>}
+                <span className="heading-decor">OUR PLANS</span>
                 <h2>
                     Affordable Pricing Options
                 </h2>
@@ -17,13 +17,17 @@ const Pricing = ({withIcon, showBtn}) => (
                     <div className="pricing-card text-center">
                         <h4>3 Months</h4>
                         <span>$19</span>
-                        <p>Billed every 3 months</p>
-                        <p>$6.33 per month</p>
+                        <p>
+                            Billed every 3 months
+                            <br/>
+                            $6.33 per month
+                        </p>
                     </div>
                 </div>
 
                 <div className="custom-col">
-                    <div className="pricing-card text-center">
+                    <div className="pricing-card pricing-card--active text-center">
+                        <img src={'/static/img/ico-check-bgr.svg'} alt="Checkmark" />
                         <h4>Annually</h4>
                         <span>$49 <b>(save 55%)</b></span>
                         <p>Only $4.08 per month</p>
@@ -73,13 +77,9 @@ const Pricing = ({withIcon, showBtn}) => (
                 <div className="text-center">
                     <Link href="/subscription">
                         <a className="btn btn-cta btn-lg">
-                            Try premium membership <span className="hidden-xs">($19 - 3 months)</span>
+                            Try premium membership
                         </a>
                     </Link>
-                    <p className="text-under-btn">
-                        If you're already a premium member
-                        <Link href="/login"><a className="link">Login</a></Link>
-                    </p>
                 </div>
             )}
 

@@ -8,8 +8,7 @@ const Header = ({isAuthenticated, deauthenticate}) => (
             <div className="container">
                 <div className="navbar-header">
 
-                    <button className="navbar-toggle" type="button" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1">
+                    <button className="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span className="sr-only">Toggle navigation</span>
                         <span className="icon-bar"/>
                         <span className="icon-bar"/>
@@ -29,7 +28,7 @@ const Header = ({isAuthenticated, deauthenticate}) => (
                         <li>
                             <Link href="/premium">
                                 <a className="premium">
-                                    <i className="ion-ios-star"/>
+                                    <img src={'/static/img/star.svg'} alt="Star" width={16} height={16} />
                                     Premium Members
                                 </a>
                             </Link>
@@ -39,7 +38,6 @@ const Header = ({isAuthenticated, deauthenticate}) => (
                         <li>
                             <Link href="/login">
                                 <a className="login">
-                                    <i className="ion-log-in visible-xs"/>
                                     Login
                                 </a>
                             </Link>
@@ -49,7 +47,6 @@ const Header = ({isAuthenticated, deauthenticate}) => (
                         <li>
                             <Link href="/profile">
                                 <a className="profile">
-                                    <i className="ion-person visible-xs"/>
                                     Profile
                                 </a>
                             </Link>
@@ -59,7 +56,6 @@ const Header = ({isAuthenticated, deauthenticate}) => (
                         <li onClick={deauthenticate}>
                             <Link href="#">
                                 <a>
-                                    <i className="ion-log-out visible-xs"/>
                                     Logout
                                 </a>
                             </Link>

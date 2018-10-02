@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+    <defs>
+        <radialGradient id="a" cx="121.747%" cy="-16.936%" r="158.053%" fx="121.747%" fy="-16.936%">
+            <stop offset="0%" stop-color="#E5EDF9"/>
+            <stop offset="100%" stop-color="#FFF"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="70" cy="70" r="70" fill="url(#a)" opacity=".5"/>
+        <g fill-rule="nonzero" transform="translate(30 42)">
+            <circle cx="28" cy="14" r="6" fill="#FF857F" opacity=".2"/>
+            <path fill="#FF857F" d="M9.36 48h37.28c-3.36-2.32-11.48-5-18.64-5s-15.28 2.68-18.64 5z" opacity=".2"/>
+            <path fill="#FF675F" d="M28 28c7.72 0 14-6.28 14-14S35.72 0 28 0 14 6.28 14 14s6.28 14 14 14zm0-20c3.32 0 6 2.68 6 6s-2.68 6-6 6-6-2.68-6-6 2.68-6 6-6zM28 35c-9.36 0-28 4.68-28 14v7h56v-7c0-9.32-18.64-14-28-14zM9.36 48c3.36-2.32 11.48-5 18.64-5s15.28 2.68 18.64 5H9.36zM56.16 35.24C60.8 38.6 64 43.08 64 49v7h16v-7c0-8.08-14-12.68-23.84-13.76zM52 28c7.72 0 14-6.28 14-14S59.72 0 52 0c-2.16 0-4.16.52-6 1.4 2.52 3.56 4 7.92 4 12.6s-1.48 9.04-4 12.6c1.84.88 3.84 1.4 6 1.4z"/>
+        </g>
+    </g>
+</svg>

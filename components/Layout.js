@@ -19,7 +19,9 @@ const Layout = ({title, children, userEmail}) => (
 
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" />
+
+            <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" />
 
             <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
 

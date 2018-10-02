@@ -102,14 +102,14 @@ const Welcome = ({airport, persistenceToken}) => {
                             </h3>
                         </div>
 
-                        <div className="heading-quaternary text-center">
+                        <div className="heading-tertiary text-center">
                             <h4>
                                 <i className="ion-plus-round"/>
                                 Filter by "When to fly dates"
                             </h4>
                         </div>
 
-                        <div className="heading-quaternary text-center">
+                        <div className="heading-tertiary text-center">
                             <h4>
                                 <i className="ion-plus-round"/>
                                 Filter by "Favorite destinations"
