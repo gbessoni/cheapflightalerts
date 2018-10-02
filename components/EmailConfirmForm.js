@@ -1,53 +1,53 @@
-import { Component } from 'react';
+import {Component} from 'react';
 import axios from 'axios';
-import { API } from '../config';
+import {API} from '../config';
 import Error from '../components/Error';
 import Success from '../components/Success';
 
 class EmailConfirmForm extends Component {
 
-  state = {
-    isError: false,
-    isSuccess: false
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-
-    axios.get(`${API}/basic/email_confirm/${this.props.persistenceToken}`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json; version=1'
-      }
-    })
-      .then(response => this.setState({
+    state = {
         isError: false,
-        isSuccess: true
-      }))
-      .catch(error => {
-        this.setState({
-          isError: true,
-          isSuccess: false
-        });
-      });
-  }
+        isSuccess: false
+    };
 
-  render() {
+    handleSubmit = (e) => {
+        e.preventDefault();
 
-    const { isError, isSuccess } = this.state;
+        axios.get(`${API}/basic/email_confirm/${this.props.persistenceToken}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json; version=1'
+            }
+        })
+            .then(response => this.setState({
+                isError: false,
+                isSuccess: true
+            }))
+            .catch(error => {
+                this.setState({
+                    isError: true,
+                    isSuccess: false
+                });
+            });
+    };
 
-    return (
-      <form onSubmit={this.handleSubmit}>
+    render() {
 
-        {isError && <Error error="Oops.. Something went worng." />}
+        const {isError, isSuccess} = this.state;
 
-        {isSuccess && <Success success="Your email was confirmed!" />}
+        return (
+            <form onSubmit={this.handleSubmit}>
 
-        <button type="submit" className="btn btn-cta btn-lg btn-block">Confirm my email</button>
+                {isError && <Error error="Oops.. Something went worng."/>}
 
-      </form>
-    );
-  }
+                {isSuccess && <Success success="Your email was confirmed!"/>}
+
+                <button type="submit" className="btn btn-cta btn-lg btn-block">Confirm my email</button>
+
+            </form>
+        );
+    }
 
 }
 

@@ -1,30 +1,30 @@
-import { Component } from 'react';
+import {Component} from 'react';
 
 class Error extends Component {
 
-  // componentDidMount() {
-  //   setTimeout(() => {
-  //     document.querySelector('.alert').remove();
-  //   }, 3000);
-  // }
+    // componentDidMount() {
+    //   setTimeout(() => {
+    //     document.querySelector('.alert').remove();
+    //   }, 3000);
+    // }
 
-  // componentWillUnmount() {
-  //   document.querySelector('.alert').remove();
-  // }
+    // componentWillUnmount() {
+    //   document.querySelector('.alert').remove();
+    // }
 
-  render() {
-    return (
-      <div className="alert alert-danger alert-dismissible">
+    render() {
+        return (
+            <div className="alert alert-danger alert-dismissible">
 
-        <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
 
-        <strong>Error!</strong> {this.props.error}
+                <strong>Error!</strong> {this.props.error}
 
-      </div>
-    );
-  }
+            </div>
+        );
+    }
 
 }
 

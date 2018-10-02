@@ -1,45 +1,51 @@
 import withRedux from 'next-redux-wrapper';
-import { initStore } from '../redux';
+import {initStore} from '../redux';
 import initialize from '../utils/initialize';
 import Layout from '../components/Layout';
 import NewPasswordForm from '../components/NewPasswordForm';
 
-const NewPassword = ({ perishableToken }) => {
+const NewPassword = ({perishableToken}) => {
 
-  if (perishableToken) {
+    if (perishableToken) {
 
-    return (
-      <Layout title="Cheap Flight Alerts | New password">
+        return (
+            <Layout title="Cheap Flight Alerts | New password">
+                <div className="container">
 
-        <NewPasswordForm
-          perishableToken={perishableToken}
-        />
+                    <NewPasswordForm
+                        perishableToken={perishableToken}
+                    />
 
-      </Layout>
-    );
+                </div>
+            </Layout>
+        );
 
-  } else {
+    } else {
 
-    return (
-      <Layout title="New password">
-        <div className="heading-non-auth text-center">
-          <h3>You are not authorized to view this content.</h3>
-        </div>
-      </Layout>
-    );
+        return (
+            <Layout title="New password">
+                <div className="container">
 
-  }
+                    <div className="heading-non-auth text-center">
+                        <h3>You are not authorized to view this content.</h3>
+                    </div>
+
+                </div>
+            </Layout>
+        );
+
+    }
 
 };
 
-NewPassword.getInitialProps = function(ctx) {
-  initialize(ctx);
+NewPassword.getInitialProps = function (ctx) {
+    initialize(ctx);
 
-  const { perishable_token } = ctx.query;
+    const {perishable_token} = ctx.query;
 
-  if (perishable_token) {
-    return { perishableToken: perishable_token };
-  }
+    if (perishable_token) {
+        return {perishableToken: perishable_token};
+    }
 };
 
 export default withRedux(initStore)(NewPassword);

@@ -1,15 +1,15 @@
-const HowItWorksItem = ({ iconClass, title, text }) => (
-  <div className="hiw-item">
-    <div className="hiw-item__card">
+const HowItWorksItem = ({iconClass, title, text}) => (
+    <div className="hiw-item">
+        <div className="hiw-item__card">
 
-      <i className={iconClass} />
+            <i className={iconClass} />
 
-      <h4>{title}</h4>
+            <h4>{title}</h4>
 
-      <p>{text}</p>
+            <p>{text}</p>
 
+        </div>
     </div>
-  </div>
 );
 
 export default HowItWorksItem;

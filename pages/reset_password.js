@@ -1,9 +1,9 @@
-import { Component } from 'react';
+import {Component} from 'react';
 import withRedux from 'next-redux-wrapper';
-import { initStore } from '../redux';
+import {initStore} from '../redux';
 import initialize from '../utils/initialize';
 import axios from 'axios';
-import { API } from '../config';
+import {API} from '../config';
 import Layout from '../components/Layout';
 import classnames from 'classnames';
 import Success from '../components/Success';
@@ -12,105 +12,107 @@ import Link from 'next/link';
 
 class ResetPassword extends Component {
 
-  state = {
-    email: '',
-    isError: false,
-    isSuccess: false,
-    errors: {}
-  }
-
-  handleChange = (e) => {
-    const { errors } = this.state;
-    const input = e.target.name;
-
-    if (errors[input]) {
-
-      let errors = {...errors};
-      delete errors[input];
-
-      this.setState({ [input]: e.target.value, errors });
-
-    } else {
-      this.setState({ [input]: e.target.value });
+    state = {
+        email: '',
+        isError: false,
+        isSuccess: false,
+        errors: {}
     }
-  }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+    handleChange = (e) => {
+        const {errors} = this.state;
+        const input = e.target.name;
 
-    const { email } = this.state;
-    let errors = {};
+        if (errors[input]) {
 
-		if (email === '') errors.email = 'email is required';
+            let errors = {...errors};
+            delete errors[input];
 
-    this.setState({ errors });
+            this.setState({[input]: e.target.value, errors});
 
-    const isValid = Object.keys(errors).length === 0;
-
-    if (isValid) {
-
-      axios.post(`${API}/premium/password_reset`, { email }, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json; version=1'
+        } else {
+            this.setState({[input]: e.target.value});
         }
-      })
-        .then(response => this.setState({
-          isError: false,
-          isSuccess: true
-        }))
-        .catch(error => {
-          this.setState({
-            isError: true,
-            isSuccess: false
-          });
-        });
     }
 
-  }
+    handleSubmit = (e) => {
+        e.preventDefault();
 
-  render() {
+        const {email} = this.state;
+        let errors = {};
 
-    const { isError, isSuccess, errors } = this.state;
+        if (email === '') errors.email = 'email is required';
 
-    return (
-      <Layout title="Cheap Flight Alerts | Reset password">
+        this.setState({errors});
 
-        <form onSubmit={this.handleSubmit} className="auth-form auth-form--reset-password">
+        const isValid = Object.keys(errors).length === 0;
 
-          <h1 className="auth-form__title">Reset Password</h1>
+        if (isValid) {
 
-          {isError && <Error error="No such subscriber!" />}
+            axios.post(`${API}/premium/password_reset`, {email}, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json; version=1'
+                }
+            })
+                .then(response => this.setState({
+                    isError: false,
+                    isSuccess: true
+                }))
+                .catch(error => {
+                    this.setState({
+                        isError: true,
+                        isSuccess: false
+                    });
+                });
+        }
 
-          {isSuccess && <Success success="Please check your email to set a new password." />}
+    }
 
-          <div className={classnames('form-group', { 'has-error': errors.email })}>
-            <input
-              type="email"
-              className="form-control custom-input"
-              placeholder="Email"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-            {errors.email && <p className="error-text">{errors.email}</p>}
-          </div>
+    render() {
 
-          <button type="submit" className="btn btn-primary btn-block">Reset Password</button>
+        const {isError, isSuccess, errors} = this.state;
 
-          <p className="auth-text">
-            Back to <Link href="/login"><a className="link">login</a></Link>.
-          </p>
+        return (
+            <Layout title="Cheap Flight Alerts | Reset password">
+                <div className="container">
 
-        </form>
+                    <form onSubmit={this.handleSubmit} className="auth-form auth-form--reset-password">
 
-      </Layout>
-    );
-  }
+                        <h1 className="auth-form__title">Reset Password</h1>
+
+                        {isError && <Error error="No such subscriber!"/>}
+
+                        {isSuccess && <Success success="Please check your email to set a new password."/>}
+
+                        <div className={classnames('form-group', {'has-error': errors.email})}>
+                            <input
+                                type="email"
+                                className="form-control custom-input"
+                                placeholder="Email"
+                                name="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                            />
+                            {errors.email && <p className="error-text">{errors.email}</p>}
+                        </div>
+
+                        <button type="submit" className="btn btn-primary btn-block">Reset Password</button>
+
+                        <p className="auth-text">
+                            Back to <Link href="/login"><a className="link">login</a></Link>.
+                        </p>
+
+                    </form>
+
+                </div>
+            </Layout>
+        );
+    }
 }
 
-ResetPassword.getInitialProps = function(ctx) {
-  initialize(ctx);
+ResetPassword.getInitialProps = function (ctx) {
+    initialize(ctx);
 };
 
 export default withRedux(initStore)(ResetPassword);

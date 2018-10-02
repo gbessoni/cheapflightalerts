@@ -1,61 +1,63 @@
 import withRedux from 'next-redux-wrapper';
-import { initStore } from '../redux';
+import {initStore} from '../redux';
 import initialize from '../utils/initialize';
 import Layout from '../components/Layout';
 import EmailConfirmForm from '../components/EmailConfirmForm';
 
-const EmailConfirm = ({ persistenceToken }) => {
+const EmailConfirm = ({persistenceToken}) => {
 
-  if (persistenceToken) {
+    if (persistenceToken) {
 
-    return (
-      <Layout title="Cheap Flight Alerts | Email confirmation">
+        return (
+            <Layout title="Cheap Flight Alerts | Email confirmation">
+                <section className="email-confirmation text-center">
+                    <div className="container">
 
-        <section className="email-confirmation text-center">
+                        <div className="heading-primary">
+                            <h1>
+                                Email confirmation
+                            </h1>
+                        </div>
 
-          <div className="heading-primary">
-            <h1>
-              Email confirmation
-            </h1>
-          </div>
+                        <div className="heading-tertiary">
+                            <h3>
+                                Hello! You are almost there. Please click on the button below to confirm you email.
+                            </h3>
+                        </div>
 
-          <div className="heading-tertiary">
-            <h3>
-            Hello! You are almost there. Please click on the button below to confirm you email.
-            </h3>
-          </div>
+                        <EmailConfirmForm
+                            persistenceToken={persistenceToken}
+                        />
 
-          <EmailConfirmForm
-            persistenceToken={persistenceToken}
-          />
+                    </div>
+                </section>
+            </Layout>
+        );
 
-        </section>
+    } else {
 
-      </Layout>
-    );
+        return (
+            <Layout title="Email confirmation">
+                <div className="container">
+                    <div className="heading-non-auth text-center">
+                        <h3>You are not authorized to view this content.</h3>
+                    </div>
+                </div>
+            </Layout>
+        );
 
-  } else {
-
-    return (
-      <Layout title="Email confirmation">
-        <div className="heading-non-auth text-center">
-          <h3>You are not authorized to view this content.</h3>
-        </div>
-      </Layout>
-    );
-
-  }
+    }
 
 };
 
-EmailConfirm.getInitialProps = function(ctx) {
-  initialize(ctx);
+EmailConfirm.getInitialProps = function (ctx) {
+    initialize(ctx);
 
-  const { persistence_token } = ctx.query;
+    const {persistence_token} = ctx.query;
 
-  if (persistence_token) {
-    return { persistenceToken: persistence_token };
-  }
+    if (persistence_token) {
+        return {persistenceToken: persistence_token};
+    }
 };
 
 export default withRedux(initStore)(EmailConfirm);

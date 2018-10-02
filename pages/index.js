@@ -143,10 +143,9 @@ const Index = () => (
                         </div>
 
                         <div className="testimonial-item__author">
-                            {/* <span className="testimonial-item__author__icon">&#128630;</span> */}
                             <span className="testimonial-item__author__icon">
-                <i className="ion-quote"/>
-              </span>
+                                <i className="ion-quote" />
+                            </span>
                             <span className="testimonial-item__author__main">- Jonathan F, April 2018</span>
                             <span className="testimonial-item__author__sub">Saved $1500 on flights</span>
                         </div>
@@ -158,9 +157,7 @@ const Index = () => (
                     <div className="testimonial-item__card">
 
                         <div className="testimonial-item__img">
-
                             <img src="/static/img/user-1.jpg" alt="Jackie L."/>
-
                         </div>
 
                         <div className="testimonial-item__text">
@@ -170,9 +167,9 @@ const Index = () => (
                         </div>
 
                         <div className="testimonial-item__author">
-                              <span className="testimonial-item__author__icon">
-                                <i className="ion-quote"/>
-                              </span>
+                            <span className="testimonial-item__author__icon">
+                                <i className="ion-quote" />
+                            </span>
                             <span className="testimonial-item__author__main">- Jackie L, March 2018</span>
                             <span className="testimonial-item__author__sub">Saved $1200 on flights</span>
                         </div>
@@ -183,10 +180,7 @@ const Index = () => (
                 <div className="testimonial-item">
                     <div className="testimonial-item__card">
 
-
                         <div className="testimonial-item__img">
-
-
                             <img src="/static/img/user-2.jpg" alt="Steve M."/>
                         </div>
 
@@ -197,9 +191,9 @@ const Index = () => (
                         </div>
 
                         <div className="testimonial-item__author">
-              <span className="testimonial-item__author__icon">
-                <i className="ion-quote"/>
-              </span>
+                            <span className="testimonial-item__author__icon">
+                                <i className="ion-quote" />
+                            </span>
                             <span className="testimonial-item__author__main">- Steve M, January 2018</span>
                             <span className="testimonial-item__author__sub">Saved $1,500+ on flights</span>
                         </div>
@@ -229,15 +223,12 @@ const Index = () => (
             </p>
 
             <p className="home-about__text">
-                Still have Questions - Check out our FAQs and Help section <a href="http://cheapflights.helpsite.io/"
-                                                                              className="link">Click here</a>
+                Still have Questions - Check out our FAQs and Help section <a href="http://cheapflights.helpsite.io/" className="link">Click here</a>
             </p>
 
         </section>
 
-        {/* <SubscribeModal /> */}
-
-        <SubscribeModal/>
+        {/*<SubscribeModal/>*/}
 
     </Layout>
 );
