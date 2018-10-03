@@ -196,7 +196,7 @@ const Premium = () => (
 
                 <div className="text-center">
                     <Link href="/subscription">
-                        <a className="btn btn-cta btn-lg">
+                        <a className="btn btn-primary btn-lg">
                             Try premium membership
                         </a>
                     </Link>

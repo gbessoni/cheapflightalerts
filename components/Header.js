@@ -27,7 +27,13 @@ const Header = ({isAuthenticated, deauthenticate}) => (
 
                         <li>
                             <Link href="/premium">
-                                <a className="premium">
+                                <a className="btn btn-primary btn-primary--outline hidden-xs">
+                                    <img src={'/static/img/star.svg'} alt="Star" width={16} height={16} />
+                                    Premium Members
+                                </a>
+                            </Link>
+                            <Link href="/premium" >
+                                <a className="premium visible-xs">
                                     <img src={'/static/img/star.svg'} alt="Star" width={16} height={16} />
                                     Premium Members
                                 </a>
@@ -37,7 +43,12 @@ const Header = ({isAuthenticated, deauthenticate}) => (
                         {!isAuthenticated &&
                         <li>
                             <Link href="/login">
-                                <a className="login">
+                                <a className="btn btn-primary hidden-xs">
+                                    Login
+                                </a>
+                            </Link>
+                            <Link href="/login">
+                                <a className="visible-xs">
                                     Login
                                 </a>
                             </Link>

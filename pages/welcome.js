@@ -73,7 +73,7 @@ const Welcome = ({airport, persistenceToken}) => {
 
                         <div className="text-center">
                             <Link href="/subscription">
-                                <a className="btn btn-cta btn-lg">
+                                <a className="btn btn-primary btn-lg">
                                     Try premium membership <span className="hidden-xs">($19 - 3 months)</span>
                                 </a>
                             </Link>

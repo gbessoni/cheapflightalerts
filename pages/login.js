@@ -61,53 +61,55 @@ class Login extends Component {
 
         return (
             <Layout title="Cheap Flight Alerts | Premium Membership Login">
-                <div className="container">
+                <section className="section">
+                    <div className="container">
 
-                    <form onSubmit={this.handleSubmit} className="auth-form">
+                        <form onSubmit={this.handleSubmit} className="auth-form">
 
-                        <h1 className="auth-form__title">Premium Membership Login</h1>
+                            <h1 className="auth-form__title">Premium Membership Login</h1>
 
-                        {this.props.error && <Error error={this.props.error}/>}
+                            {this.props.error && <Error error={this.props.error}/>}
 
-                        <div className={classnames('form-group', {'has-error': errors.email})}>
-                            <input
-                                type="email"
-                                className="form-control custom-input"
-                                placeholder="Email"
-                                name="email"
-                                value={this.state.email}
-                                onChange={this.handleChange}
-                            />
-                            {errors.email && <p className="error-text">{errors.email}</p>}
-                        </div>
+                            <div className={classnames('form-group', {'has-error': errors.email})}>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    placeholder="Email"
+                                    name="email"
+                                    value={this.state.email}
+                                    onChange={this.handleChange}
+                                />
+                                {errors.email && <p className="error-text">{errors.email}</p>}
+                            </div>
 
-                        <div className={classnames('form-group', {'has-error': errors.password})}>
-                            <input
-                                type="password"
-                                className="form-control custom-input"
-                                placeholder="Password"
-                                name="password"
-                                value={this.state.password}
-                                onChange={this.handleChange}
-                            />
-                            {errors.password && <p className="error-text">{errors.password}</p>}
-                        </div>
+                            <div className={classnames('form-group', {'has-error': errors.password})}>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    placeholder="Password"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                />
+                                {errors.password && <p className="error-text">{errors.password}</p>}
+                            </div>
 
-                        <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                            <button type="submit" className="btn btn-primary btn-block">Submit</button>
 
-                        <p className="auth-text">
-                            Forgot your password? No problem. <Link href="/reset_password"><a className="link">click
-                            here</a></Link> to reset your password.
-                        </p>
+                            <p className="auth-text">
+                                Forgot your password? No problem. <Link href="/reset_password"><a className="link">click
+                                here</a></Link> to reset your password.
+                            </p>
 
-                        <p className="auth-text">
-                            Not a Member yet, <Link href="/"><a className="link">click here</a></Link> to start receiving
-                            cheap flight alerts.
-                        </p>
+                            <p className="auth-text">
+                                Not a Member yet, <Link href="/"><a className="link">click here</a></Link> to start receiving
+                                cheap flight alerts.
+                            </p>
 
-                    </form>
+                        </form>
 
-                </div>
+                    </div>
+                </section>
             </Layout>
         );
     }

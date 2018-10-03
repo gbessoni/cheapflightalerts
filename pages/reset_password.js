@@ -75,37 +75,41 @@ class ResetPassword extends Component {
 
         return (
             <Layout title="Cheap Flight Alerts | Reset password">
-                <div className="container">
+                <section className="section">
 
-                    <form onSubmit={this.handleSubmit} className="auth-form auth-form--reset-password">
+                    <div className="container">
 
-                        <h1 className="auth-form__title">Reset Password</h1>
+                        <form onSubmit={this.handleSubmit} className="auth-form auth-form--reset-password">
 
-                        {isError && <Error error="No such subscriber!"/>}
+                            <h1 className="auth-form__title">Reset Password</h1>
 
-                        {isSuccess && <Success success="Please check your email to set a new password."/>}
+                            {isError && <Error error="No such subscriber!"/>}
 
-                        <div className={classnames('form-group', {'has-error': errors.email})}>
-                            <input
-                                type="email"
-                                className="form-control custom-input"
-                                placeholder="Email"
-                                name="email"
-                                value={this.state.email}
-                                onChange={this.handleChange}
-                            />
-                            {errors.email && <p className="error-text">{errors.email}</p>}
-                        </div>
+                            {isSuccess && <Success success="Please check your email to set a new password."/>}
 
-                        <button type="submit" className="btn btn-primary btn-block">Reset Password</button>
+                            <div className={classnames('form-group', {'has-error': errors.email})}>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    placeholder="Email"
+                                    name="email"
+                                    value={this.state.email}
+                                    onChange={this.handleChange}
+                                />
+                                {errors.email && <p className="error-text">{errors.email}</p>}
+                            </div>
 
-                        <p className="auth-text">
-                            Back to <Link href="/login"><a className="link">login</a></Link>.
-                        </p>
+                            <button type="submit" className="btn btn-primary btn-block">Reset Password</button>
 
-                    </form>
+                            <p className="auth-text">
+                                Back to <Link href="/login"><a className="link">login</a></Link>.
+                            </p>
 
-                </div>
+                        </form>
+
+                    </div>
+
+                </section>
             </Layout>
         );
     }

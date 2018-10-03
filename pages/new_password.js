@@ -10,13 +10,15 @@ const NewPassword = ({perishableToken}) => {
 
         return (
             <Layout title="Cheap Flight Alerts | New password">
-                <div className="container">
+                <section className="section">
+                    <div className="container">
 
-                    <NewPasswordForm
-                        perishableToken={perishableToken}
-                    />
+                        <NewPasswordForm
+                            perishableToken={perishableToken}
+                        />
 
-                </div>
+                    </div>
+                </section>
             </Layout>
         );
 
@@ -24,13 +26,17 @@ const NewPassword = ({perishableToken}) => {
 
         return (
             <Layout title="New password">
-                <div className="container">
+                <section className="section">
 
-                    <div className="heading-non-auth text-center">
-                        <h3>You are not authorized to view this content.</h3>
+                    <div className="container">
+
+                        <div className="heading-non-auth text-center">
+                            <h3>You are not authorized to view this content.</h3>
+                        </div>
+
                     </div>
 
-                </div>
+                </section>
             </Layout>
         );
 

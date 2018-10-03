@@ -95,7 +95,7 @@ class AirportForm extends Component {
                 {isAirportEmtpy && <Error error="Please enter an airport."/>}
                 {isSuccess && <Success success="Your preferences were successfully updated."/>}
 
-                <label htmlFor="airportAutosuggest" className="custom-label has-error">
+                <label htmlFor="airportAutosuggest" className="has-error">
                     What's your preferred departure airport?
                 </label>
 

@@ -1,7 +1,7 @@
 const Select = (props) => (
   <div className="form-group custom-select">
     <select
-      className="form-control custom-input custom-select"
+      className="form-control custom-select"
       value={props.value}
       name={props.name}
       onChange={props.onChange}

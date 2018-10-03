@@ -14,7 +14,7 @@ const Autosuggest = (props) => (
       value: props.value,
       onChange: props.onChange,
       id: props.id,
-      className: 'form-control custom-input',
+      className: 'form-control',
       name: props.name
     }}
   />

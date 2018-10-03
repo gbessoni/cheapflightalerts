@@ -70,7 +70,7 @@ class DateRange extends Component {
 
           <div className="date-range__select">
             <select
-              className="form-control custom-input"
+              className="form-control"
               name="month1"
               value={this.state.month1}
               onChange={this.handleChange}
@@ -96,7 +96,7 @@ class DateRange extends Component {
 
           <div className="date-range__select">
             <select
-              className="form-control custom-input"
+              className="form-control"
               name="year1"
               value={this.state.year1}
               onChange={this.handleChange}
@@ -125,7 +125,7 @@ class DateRange extends Component {
 
           <div className="date-range__select">
             <select
-              className="form-control custom-input"
+              className="form-control"
               name="month2"
               value={this.state.month2}
               onChange={this.handleChange}
@@ -151,7 +151,7 @@ class DateRange extends Component {
 
           <div className="date-range__select">
             <select
-              className="form-control custom-input"
+              className="form-control"
               name="year2"
               value={this.state.year2}
               onChange={this.handleChange}

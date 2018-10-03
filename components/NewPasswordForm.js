@@ -93,7 +93,7 @@ class NewPasswordForm extends Component {
                 <div className={classnames('form-group', {'has-error': errors.password})}>
                     <input
                         type="password"
-                        className="form-control custom-input"
+                        className="form-control"
                         placeholder="Password"
                         name="password"
                         value={password}
@@ -105,7 +105,7 @@ class NewPasswordForm extends Component {
                 <div className={classnames('form-group', {'has-error': errors.confirmPassword})}>
                     <input
                         type="password"
-                        className="form-control custom-input"
+                        className="form-control"
                         placeholder="Confirm password"
                         name="confirmPassword"
                         value={confirmPassword}

@@ -3,12 +3,13 @@
   .navbar
     background: none
     border: none
-    padding: 2rem
+    padding: 3rem
     margin: 0
 
+    .navbar-toggle
+      top: 3rem
+
     a
-      color: $color-black
-      font-weight: 700
       display: block
 
       &.navbar-brand
@@ -22,44 +23,29 @@
       li
         padding: 0 1rem
 
-        a
-          border-radius: $border-radius-default
-          border: 1px solid $color-gray-light-1
-          background: $color-white
-          padding: 1rem 1.5rem 1rem
-          text-transform: uppercase
-          letter-spacing: .5px
-          transition: all .3s
+        a:not(.btn)
+          color: $color-black!important
+          padding: 1rem
 
           &:hover
-            color: $color-primary
-            border-color: $color-primary
+            color: $color-primary!important
 
-          &.premium
-            color: $color-primary
-            border-color: $color-primary
-            padding: .8rem 1.6rem .8rem 2.3rem
+        .premium
+          img
+            margin-right: 1rem
+            position: relative
+            top: -.1rem
 
-            img
-              position: relative
-              top: -.15rem
-              left: -.8rem
+      .btn-primary--outline
+        padding: 1rem 2rem 1rem 3.6rem!important
 
-            &:hover
-              background: $color-primary
-              color: $color-white
+        img
+          position: absolute
+          top: 1.2rem
+          left: 1.2rem
 
-              img
-                filter: brightness(0) invert(1)
-
-          &.login
-            color: $color-white
-            background: $color-primary
-            border-color: $color-primary
-
-            &:hover
-              color: $color-primary
-              background: $color-white
+        &:hover img
+          filter: brightness(0) invert(1)
 
 // Responsiveness
 
@@ -86,22 +72,11 @@
       padding: 0!important
 
     .navbar-right
-      margin: 0!important
 
       li
-        display: block
-        padding: .5rem 0!important
+        a:not(.btn)
+          padding: 1.5rem 2rem!important
 
-        &:not(:last-child)
-          border-bottom: 1px solid $color-gray-light-2
-
-        a
-          border: none!important
-          background-color: transparent!important
-          color: $color-gray-dark!important
-
-          &:hover
-            color: $color-primary!important
-
-            img
-              filter: none!important
+      .btn-primary--outline
+        img
+          filter: none!important

@@ -65,8 +65,8 @@ class SubscribeForm extends Component {
 
                 <button
                     type="submit"
-                    disabled={this.state.btnDisabled}
-                    className="btn-cta"
+                    // disabled={this.state.btnDisabled}
+                    className="btn btn-primary"
                 >
                     {this.props.btnText}
                 </button>

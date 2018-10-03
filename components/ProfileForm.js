@@ -118,13 +118,13 @@ class ProfileForm extends Component {
                 {/* email */}
 
                 <div className={classnames('form-group', {'has-error': errors.email})}>
-                    <label htmlFor="email" className="custom-label">Email</label>
+                    <label htmlFor="email">Email</label>
 
                     <input
                         type="email"
                         id="email"
                         name="email"
-                        className="form-control custom-input"
+                        className="form-control"
                         value={email}
                         onChange={this.handleChange}
                     />
@@ -135,13 +135,13 @@ class ProfileForm extends Component {
                 {/* first name */}
 
                 <div className={classnames('form-group', {'has-error': errors.firstName})}>
-                    <label htmlFor="firstName" className="custom-label">First name</label>
+                    <label htmlFor="firstName">First name</label>
 
                     <input
                         type="text"
                         id="firstName"
                         name="firstName"
-                        className="form-control custom-input"
+                        className="form-control"
                         value={firstName}
                         onChange={this.handleChange}
                     />
@@ -152,7 +152,7 @@ class ProfileForm extends Component {
                 {/* last name */}
 
                 <div className={classnames('form-group', {'has-error': errors.lastName})}>
-                    <label htmlFor="lastName" className="custom-label">Last name</label>
+                    <label htmlFor="lastName">Last name</label>
 
                     <input
                         type="text"

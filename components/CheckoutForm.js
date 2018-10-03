@@ -132,7 +132,7 @@ class CheckoutForm extends Component {
 
                     <div className="form-group">
 
-                        <label className="custom-label">Choose your subscription plan</label>
+                        <label>Choose your subscription plan</label>
 
                         {/* radios */}
 
@@ -188,7 +188,7 @@ class CheckoutForm extends Component {
 
                     <div className={classnames('form-group', {'has-error': errors.email})}>
 
-                        <label htmlFor="email" className="custom-label">
+                        <label htmlFor="email">
                             Email
                         </label>
 
@@ -197,7 +197,7 @@ class CheckoutForm extends Component {
                             name="email"
                             value={this.state.email}
                             id="email"
-                            className="form-control custom-input"
+                            className="form-control"
                             onChange={this.handleChange}
                         />
 
@@ -211,13 +211,13 @@ class CheckoutForm extends Component {
 
                         <div className={classnames('form-group', {'has-error': isCardValid === false})}>
 
-                            <label htmlFor="card" className="custom-label">
+                            <label htmlFor="card">
                                 Card details
                             </label>
 
                             <CardElement
                                 hidePostalCode={true}
-                                classes={{base: 'form-control custom-input StripeElement'}}
+                                classes={{base: 'form-control StripeElement'}}
                                 elementRef={(element) => this._element = element}
                                 onChange={this.handleCardChange}
                             />

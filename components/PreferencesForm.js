@@ -301,13 +301,13 @@ class PreferencesForm extends Component {
 
                 {isPremium && (
                     <div className={classnames('form-group', {'has-error': errors.email})}>
-                        <label className="custom-label" htmlFor="email">Preferred email</label>
+                        <label htmlFor="email">Preferred email</label>
                         <input
                             type="email"
                             name="email"
                             placeholder="youremail@email.com"
                             id="email"
-                            className="form-control custom-input"
+                            className="form-control"
                             value={this.state.email}
                             onChange={this.handleChange}
                         />
@@ -319,7 +319,7 @@ class PreferencesForm extends Component {
 
                 <div className="form-group">
 
-                    <label className="custom-label" htmlFor="departureAutosuggest">
+                    <label htmlFor="departureAutosuggest">
                         🛫 Choose your departure airport {!isPremium &&
                     <span>(select more than one - <Link href="/subscription"><a className="link">Premium</a></Link> only)</span>}
                     </label>
@@ -370,7 +370,7 @@ class PreferencesForm extends Component {
 
                     <div className="form-group">
 
-                        <label className="custom-label">✈️ Flight type</label>
+                        <label>✈️ Flight type</label>
 
                         <div>
                             <label className="custom-radio">
@@ -416,7 +416,7 @@ class PreferencesForm extends Component {
                     {/* subscribe checkbox */}
 
                     <div className="form-group">
-                        <label className="custom-label custom-checkbox">
+                        <label className="custom-checkbox">
                             <input
                                 type="checkbox"
                                 id="isSubscribed"
@@ -433,7 +433,7 @@ class PreferencesForm extends Component {
 
                     <div className="form-group">
 
-                        <label className="custom-label" htmlFor="destinationAutosuggest">
+                        <label htmlFor="destinationAutosuggest">
                             🛬 Add Destinations vs Take me anywhere
                         </label>
 
@@ -467,7 +467,7 @@ class PreferencesForm extends Component {
 
                     <div className="form-group">
 
-                        <label className="custom-label">📅 Add When to Fly Dates</label>
+                        <label>📅 Add When to Fly Dates</label>
 
                         <div>
                             <label className="custom-radio">

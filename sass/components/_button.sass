@@ -1,68 +1,25 @@
-.btn-cta
-  display: inline-block
-  margin-top: 3rem
-  padding: 1.6rem 2rem 1.4rem
-  background: $color-primary
-  text-transform: uppercase
-  color: $color-white
-  font-size: 1.8rem
-  font-weight: 600
-  border: 1px solid $color-primary
-  border-radius: 1rem
-  outline: none!important
-  transition: all .3s
-
-  &:focus, &:active
-    background-color: $color-primary!important
-    border-color: $color-primary!important
-    box-shadow: none!important
-    color: $color-white!important
-
-  &:hover
-    color: $color-primary
-    background: $color-white
-    border-color: $color-primary
-
-  &:disabled
-    opacity: 0.7
-    cursor: not-allowed
-
-    &:hover
-      background: $color-primary
-      color: $color-white
-
 .btn-primary
-  height: 42px
-  background-color: $color-primary
+  background-image: linear-gradient(to bottom, $color-primary, $color-primary-dark 98%)
+  box-shadow: 0 1px 1px 0 rgba(43, 26, 24, 0.1), inset 0 2px 0 0 rgba(255, 255, 255, 0.08)
   border-color: $color-primary
-  text-transform: uppercase
-  font-weight: 700
+  border-radius: $border-radius-default
+  color: $color-white!important
+  outline: none!important
+  font-family: 'Roboto', sans-serif
+  font-size: $font-size-default
+  font-weight: 500
+  line-height: 1.57
+  text-transform: capitalize
+  padding: 1rem 2rem!important
   transition: all .3s
 
-  &:focus, &:active
-    background-color: $color-primary!important
+  &:hover, &:focus, &:active
+    background-image: linear-gradient(to bottom, $color-primary, $color-primary-dark 78%)
+    box-shadow: 0 1px 1px 0 rgba(43, 26, 24, 0.1), inset 0 2px 0 0 rgba(255, 255, 255, 0.08)
     border-color: $color-primary!important
-    box-shadow: none!important
     color: $color-white!important
 
-  &:hover
+  &--outline
+    background-image: none
     background-color: $color-white
-    border-color: $color-primary
-    color: $color-primary
-
-.btn-disabled
-  background-color: rgba($color-primary, .9)
-  cursor: not-allowed
-
-  &:hover
-    background-color: rgba($color-primary, .9)!important
-    border-color: rgba($color-primary, .9)!important
-    color: $color-white!important
-
-@media (max-width: 767px)
-  .btn-cta
-    width: 100%!important
-    border-radius: 4px!important
-
-  .btn-primary
-    font-size: 1.6rem!important
+    color: $color-primary!important
