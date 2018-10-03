@@ -86,34 +86,39 @@ class AirportForm extends Component {
         const {isError, isSuccess, isAirportEmtpy} = this.state;
 
         return (
-            <form
-                className="airport-form text-center form-inline"
-                onSubmit={this.handleSubmit}
+            <div
+                className="airport-form text-center"
             >
 
                 {isError && <Error error="Oops.. Something went wrong. Please try later."/>}
                 {isAirportEmtpy && <Error error="Please enter an airport."/>}
                 {isSuccess && <Success success="Your preferences were successfully updated."/>}
 
-                <label htmlFor="airportAutosuggest" className="has-error">
-                    What's your preferred departure airport?
-                </label>
+                <form className="form-inline" onSubmit={this.handleSubmit}>
 
-                <Autosuggest
-                    suggestions={this.state.suggestions}
-                    onFetchSuggestions={this.onFetchSuggestions}
-                    onClearSuggestions={this.onClearSuggestions}
-                    onSuggestionSelected={this.onSuggestionSelected}
-                    onChange={this.handleAutosuggestChange}
-                    placeholder="Enter the name of your departure city or airport"
-                    value={this.state.airport}
-                    id="airportAutosuggest"
-                    name="airport"
-                />
+                    <div className="form-group">
+                        <label htmlFor="airportAutosuggest" className="has-error">
+                            What's your preferred departure airport?
+                        </label>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                        <Autosuggest
+                            suggestions={this.state.suggestions}
+                            onFetchSuggestions={this.onFetchSuggestions}
+                            onClearSuggestions={this.onClearSuggestions}
+                            onSuggestionSelected={this.onSuggestionSelected}
+                            onChange={this.handleAutosuggestChange}
+                            placeholder="Enter the name of your departure city or airport"
+                            value={this.state.airport}
+                            id="airportAutosuggest"
+                            name="airport"
+                        />
+                    </div>
 
-            </form>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+
+                </form>
+
+            </div>
         );
     }
 
