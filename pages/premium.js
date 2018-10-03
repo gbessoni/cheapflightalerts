@@ -74,55 +74,55 @@ const Premium = () => (
                             </tr>
                             <tr>
                                 <td>Add Destinations vs Take me Anywhere</td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>Add "When to Fly Dates" Filter</td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>Choose your departure city/airports</td>
-                                <td><i className="ion-checkmark-round"/></td>
-                                <td><i className="ion-checkmark-round"/></td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                             </tr>
                             <tr>
                                 <td>Business and First Class deal alerts</td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                                 <td></td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                             </tr>
                             <tr>
                                 <td>Get alerts first before free members</td>
-                                <td><i className="ion-checkmark-round"/></td>
-                                <td><i className="ion-checkmark-round"/></td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                             </tr>
                             <tr>
                                 <td>Free Cancellations, Anytime</td>
-                                <td><i className="ion-checkmark-round"/></td>
-                                <td><i className="ion-checkmark-round"/></td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                             </tr>
                             <tr>
                                 <td>30 day money back guarantee</td>
-                                <td><i className="ion-checkmark-round"/></td>
-                                <td><i className="ion-checkmark-round"/></td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                             </tr>
                             <tr>
                                 <td>Monthly Flight giveaway</td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                                 <td></td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td><b>Domestic Flight Deals</b></td>
-                                <td><i className="ion-checkmark-round"/></td>
+                                <td>Domestic Flight Deals</td>
+                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
                                 <td></td>
                                 <td></td>
                             </tr>

@@ -1,63 +1,55 @@
 .testimonial-item
   width: 33.33%
-  padding: 0 15px
-  margin-top: 3rem
+  padding: 15px
 
   &__card
-    box-shadow: 0 1px 5px 0 rgba($color-black, .2)
-    border-radius: 5px
+    border-radius: 8px
+    background-color: #ffffff
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 #e3e7ef
     overflow: hidden
-    background: $color-white
-    display: flex
-    flex-direction: column
-    min-height: 100%
 
   &__img
-    max-height: 200px
+    max-height: 95px
+    height: 95px
     overflow: hidden
     img
       width: 100%
-      display: block
+
+  &__content
+    position: relative
+    padding: 50px 25px 25px
+
+  &__quotes
+    position: absolute
+    right: 30px
+    top: 25px
+
+  &__author-img
+    position: absolute
+    top: -40px
+    left: 25px
+    width: 80px
+    height: 80px
+    img
+      width: 100%
+
+  &__header
+    p
+      font-size: 16px
+      font-weight: 500
+      line-height: 1.5
+      color: #3e3f42
+      span
+        display: block
+        font-size: 14px
+        line-height: 1.57
 
   &__text
-    font-size: $font-size-default
-    line-height: 1.4
-    padding: 1.5rem
-    text-align: justify
-    flex-grow: 1
-
-  &__author
-    padding: 1.5rem
-    position: relative
-    background-color: rgba($color-black, .8)
-    color: $color-white
-
-    &__icon
-      position: absolute
-      top: -20px
-      right: 10px
-      background-color: $color-white
-      border-radius: 50%
-      color: $color-primary
-      box-shadow: 0 1px 5px 0 rgba($color-black, .3)
-
-      i
-        font-size: 2.5rem
-        display: flex
-        justify-content: center
-        align-items: center
-        width: 4rem
-        &:before
-          line-height: 4rem
-
-    &__main
-      font-size: $font-size-default
-
-    &__sub
-      display: block
-      margin-top: .5rem
-      text-transform: lowercase
-      font-weight: 700
+    font-size: 14px
+    font-style: italic
+    line-height: 1.79
+    color: #6b6c6f
+    margin-top: 20px
 
 // Responsiveness
 
@@ -69,6 +61,3 @@
   .testimonial-item
     width: 100%
     margin-top: 15px
-
-    &__img
-      max-height: 100%

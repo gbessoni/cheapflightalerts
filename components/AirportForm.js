@@ -114,7 +114,11 @@ class AirportForm extends Component {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <div className="button">
+
+                        <button type="submit" className="btn btn-primary">Submit</button>
+
+                    </div>
 
                 </form>
 

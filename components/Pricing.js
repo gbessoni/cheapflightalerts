@@ -43,31 +43,31 @@ const Pricing = ({showBtn}) => (
                         Domestic and International deals
                     </li>
                     <li>
-                        <i className="ion-checkmark-round"/>
+                        <img src={'/static/img/check.svg'} alt="Check" width={28} height={28} />
                         Filter by preferred fly dates
                     </li>
                     <li>
-                        <i className="ion-checkmark-round"/>
+                        <img src={'/static/img/check.svg'} alt="Check" width={28} height={28} />
                         30 day money back guarantee
                     </li>
                     <li>
-                        <i className="ion-checkmark-round"/>
+                        <img src={'/static/img/check.svg'} alt="Check" width={28} height={28} />
                         Choose your favorite destinations
                     </li>
                     <li>
-                        <i className="ion-checkmark-round"/>
+                        <img src={'/static/img/check.svg'} alt="Check" width={28} height={28} />
                         Find out about deals FIRST
                     </li>
                     <li>
-                        <i className="ion-checkmark-round"/>
+                        <img src={'/static/img/check.svg'} alt="Check" width={28} height={28} />
                         Auto-renewal - cancel anytime
                     </li>
                     <li>
-                        <i className="ion-checkmark-round"/>
+                        <img src={'/static/img/check.svg'} alt="Check" width={28} height={28} />
                         Monthly Flight Giveaways
                     </li>
                     <li>
-                        <i className="ion-checkmark-round"/>
+                        <img src={'/static/img/check.svg'} alt="Check" width={28} height={28} />
                         Business and First Class deal alerts
                     </li>
                 </ul>

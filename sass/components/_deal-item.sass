@@ -1,116 +1,51 @@
 .deal-item
   width: 33.33%
-  padding: 0 15px
-  margin-top: 3rem
+  padding: 15px
+
+  &:nth-child(4)
+    width: 66.66%
 
   &__card
-    box-shadow: 0 1px 5px 0 rgba($color-black, 0.2)
-    border-radius: 5px
-    overflow: hidden
-    background: $color-white
-    display: flex
-    flex-direction: column
-    min-height: 100%
-
-  &__header
+    color: white
     position: relative
+    background: rebeccapurple
+    border-radius: 8px
+    background: url("/static/img/deal-item-1.jpg")
+    box-shadow: 0 2px 4px 0 #f4f6fa
+    height: 310px
 
-    &:before
-      content: ''
-      position: absolute
-      top: 0
-      left: 0
-      bottom: 0
-      right: 0
-      background: linear-gradient(to bottom, rgba($color-black, 0.2), rgba($color-black, 0.1))
+  &__content
+    padding: 20px
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.24)), linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28))
+    height: 100%
 
-  &__comments
+  &__date
+    font-size: 14px
+    line-height: 1.57
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.08)
+
+  &__bottom
     position: absolute
-    background: rgba($color-black, 0.6)
-    color: $color-white
-    padding: 5px 10px
-    top: 0
-    right: 0
-    border-radius: 5px
+    left: 20px
+    bottom: 20px
 
-  &__labels
-    position: absolute
-    top: 0
-    left: 0
-    padding: 0 5px
-    i
-      display: block
-      font-size: 28px
-      text-align: center
+  &__icons
+    img:nth-child(n+2)
+      margin-left: 10px
 
-      &.ion-arrow-graph-up-right
-        color: $color-white
-
-      &.ion-flame
-        color: $color-primary-dark
-
-  &__img
-    overflow: hidden
-    max-height: 180px
-
-    img
-      width: 100%
-
-  &__info
-    display: flex
-    background: rgba($color-black, 0.8)
-    color: $color-white
-    padding: 10px 15px
-    position: relative
-
-    a
-      color: $color-white
-      text-decoration: none
-      transition: all .2s
-
-      &:hover
-        color: $color-primary
-
-    &__date, &__read-more
-      flex-grow: 1
-
-    &__read-more
-      text-align: right
-
-    &__share
-      position: absolute
-      left: calc(50% - 7px)
-      top: calc(50% - 15.5px)
-
-      i
-        font-size: 2.2rem
-
-  &__body
-    padding: 1.5rem
-    flex-grow: 1
-
-    h4
-      font-weight: 600
-      font-size: 2rem
-
-      &:not(:last-child)
-        margin-bottom: .8rem
-
-    p
-      font-size: $font-size-default
-
-    span
-      color: $color-primary
-
-
+  &__title
+    font-size: 22px
+    font-weight: 500
+    line-height: 1.45
+    margin: 10px 0 5px
 
 // Responsiveness
 
 @media (max-width: 991px)
   .deal-item
-    width: 50%
+    width: 50%!important
 
 @media (max-width: 767px)
   .deal-item
-    width: 100%
+    width: 100%!important
     margin-top: 15px

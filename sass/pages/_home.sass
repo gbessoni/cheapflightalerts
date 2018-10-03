@@ -1,12 +1,93 @@
 .home-welcome
+  background: url('/static/img/bgr.png') center/cover no-repeat
+  padding: 15rem 0
+
   .heading-secondary
     margin-bottom: 3.5rem
 
+    h2
+      font-size: 3rem
+
+
 .home-about
 
-  &__text
-    font-size: $font-size-default
-    line-height: 1.7
+  .col-sm-8, .col-sm-4
+    margin-top: 15px
 
-    &:not(:last-child)
-      margin-bottom: 2rem
+  .col-sm-8
+    padding-left: 45px
+
+  img
+    width: 100%
+
+  p
+    font-family: 'Nunito', sans-serif
+    color: #3e3f42
+
+  &__text p
+    font-size: 16px
+    line-height: 2.13
+
+  &__questions
+    padding-left: 45px
+    padding-top: 15px
+
+    h4
+      font-family: 'Nunito', sans-serif
+      font-size: 30px
+      font-weight: bold
+      line-height: 1.47
+      color: #3e3f42
+      margin-bottom: 5px
+
+    p
+      font-family: 'Roboto', sans-serif
+      font-size: 22px
+      font-weight: 300
+      line-height: 1.45
+
+      a
+        display: block
+        width: 146px
+        margin-top: 20px
+
+.home-deals
+  background: linear-gradient(to bottom, #f9fbff, rgba(255, 255, 255, 0.89) 41%, rgba(255, 255, 255, 0.87) 57%, rgba(255, 255, 255, 0))
+
+  .heading-secondary
+    margin-bottom: 35px
+
+  .custom-row
+    margin: 0 -15px
+
+
+// Responsiveness
+
+@media (max-width: 991px)
+
+  .home-welcome
+    padding: 12rem 0 10rem
+
+  .home-about
+
+    .col-sm-4, .col-sm-8
+      width: 100%
+      margin-top: 30px
+
+    .col-sm-8
+      padding-left: 15px
+
+    img
+      width: 100%
+
+    p
+      font-family: 'Nunito', sans-serif
+      color: #3e3f42
+
+    &__text p
+      font-size: 16px
+      line-height: 2.13
+
+    &__questions
+      padding-left: 0
+
