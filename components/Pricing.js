@@ -39,7 +39,7 @@ const Pricing = ({showBtn}) => (
             <div className="pricing-list">
                 <ul>
                     <li>
-                        <i className="ion-checkmark-round"/>
+                        <img src={'/static/img/check.svg'} alt="Check" width={28} height={28} />
                         Domestic and International deals
                     </li>
                     <li>
