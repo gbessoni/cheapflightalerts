@@ -21,7 +21,7 @@ const Layout = ({title, children, userEmail}) => (
 
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" />
 
-            <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
 
             <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
 

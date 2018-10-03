@@ -3,24 +3,87 @@
   .heading-secondary
     margin-bottom: 4.5rem
 
-  table
-    margin: 0
+  .table-responsive
+    border: none
 
-    tr th
-      border-top: none
+  .custom-table
+    margin: 20px 0
+    display: flex
+    width: 100%
+    .column
+      flex-grow: 1
+    .th, .td
+      border-bottom: 1px solid #e5e7ea
+      display: flex
+      align-items: center
 
-    th, td
-      border-color: $color-gray-light-1
+    .th
+      height: 74px
+      font-size: 16px
+      font-weight: 500
+      line-height: 1.5
+      text-align: center
+      color: #3e3f42
+      padding: 15px
+
+    .td
+      height: 56px
 
     th
+      padding: 15px
+
+    .column
+      &:first-child .th
+        font-size: 30px
+        font-weight: 300
+        line-height: 1.47
+        color: #3e3f42
+        text-align: left
+      &:nth-child(2)
+        border-radius: 10px
+        background-color: white
+        box-shadow: 0 4px 32px 0 #e5e7ea, inset 0 1px 0 0 #e5e7ea, inset -1px 0 0 0 #e5e7ea, inset 1px 0 0 0 #e5e7ea
+        padding: 0 0 20px
+        .td:last-child
+          border-bottom: none
+        .th
+          text-transform: uppercase
+      &:nth-child(n+2)
+        .td, .th
+          justify-content: center
+        .td
+          color: #9ea0a5
+
+    .td
+      font-family: 'Nunito', sans-serif
+      font-size: 16px
+      color: #3e3f42
+      padding: 10px 15px
       text-align: center
 
-      a
-        text-transform: uppercase
-        color: $color-primary
+@media (max-width: 991px)
+  .premium-comparison
 
-    i
-      color: $color-green
+    .custom-table
+      min-width: 720px
+      .th
+        font-size: 14px
+        font-weight: 500
+        line-height: 1.5
+        padding: 10px 15px
+
+      th
+        padding: 15px
+
+      .column
+        &:first-child .th
+          font-size: 20px
+          font-weight: 300
+          color: #3e3f42
+          text-align: left
+
+
+
 
 .premium-more
 

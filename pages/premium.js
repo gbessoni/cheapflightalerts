@@ -62,72 +62,58 @@ const Premium = () => (
                     </h2>
                 </div>
 
-                <div className="panel panel-default">
-                    <div className="table-responsive">
-                        <table className="table table-bordered table-striped">
-                            <tbody>
-                            <tr>
-                                <th>Premium Membership Features</th>
-                                <th><Link href="/"><a className="link">Cheap Flight Alerts</a></Link></th>
-                                <th>Scott’s</th>
-                                <th>DollarFlightClub</th>
-                            </tr>
-                            <tr>
-                                <td>Add Destinations vs Take me Anywhere</td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Add "When to Fly Dates" Filter</td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Choose your departure city/airports</td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                            </tr>
-                            <tr>
-                                <td>Business and First Class deal alerts</td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td></td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                            </tr>
-                            <tr>
-                                <td>Get alerts first before free members</td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                            </tr>
-                            <tr>
-                                <td>Free Cancellations, Anytime</td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                            </tr>
-                            <tr>
-                                <td>30 day money back guarantee</td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                            </tr>
-                            <tr>
-                                <td>Monthly Flight giveaway</td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Domestic Flight Deals</td>
-                                <td><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            </tbody>
-                        </table>
+                <div className="table-responsive">
+                    <div className='custom-table'>
+
+                        <div className="column">
+                            <div className='th'>Premium Membership Features</div>
+                            <div className='td'>Add Destinations vs Take me Anywhere</div>
+                            <div className='td'>Add "When to Fly Dates" Filter</div>
+                            <div className='td'>Choose your departure city/airports</div>
+                            <div className='td'>Business and First Class deal alerts</div>
+                            <div className='td'>Get alerts first before free members</div>
+                            <div className='td'>Free Cancellations, Anytime</div>
+                            <div className='td'>30 day money back guarantee</div>
+                            <div className='td'>Monthly Flight giveaway</div>
+                            <div className='td'>Domestic Flight Deals</div>
+                        </div>
+                        <div className="column">
+                            <div className='th'>Cheap Flight Alerts</div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                        </div>
+                        <div className="column">
+                            <div className='th'>DollarFlightClub</div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                        </div>
+                        <div className="column">
+                            <div className='th'>Scott’s</div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                        </div>
+
                     </div>
                 </div>
 
