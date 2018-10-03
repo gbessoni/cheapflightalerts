@@ -39,11 +39,11 @@ class SubscribeModal extends Component {
                       className="custom-modal__content__close-icon"
                       onClick={this.closeModal}
                     >
-                        <i className="ion-close-round" />
+                        <img src={'/static/img/icon-close.svg'} alt="Close" width={24} height={24} />
                     </span>
 
                     <div className="heading-secondary heading-secondary--bold text-center">
-                        <i className="ion-ios-email"/>
+                        <img src={'/static/img/icon.svg'} alt="Mail" width={140} height={140} />
                         <h2>Don't want to miss anything?</h2>
                     </div>
 

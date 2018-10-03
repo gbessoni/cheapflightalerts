@@ -242,7 +242,7 @@ const Index = () => (
             </div>
         </section>
 
-        {/*<SubscribeModal/>*/}
+        <SubscribeModal/>
 
     </Layout>
 );

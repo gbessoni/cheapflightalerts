@@ -7,73 +7,75 @@ class SubscribeForm extends Component {
 
     state = {
         email: '',
-        btnDisabled: true,
         isSubscribed: false,
         isError: false
     };
 
     handleChange = (e) => {
-        this.setState({
-            email: e.target.value,
-            btnDisabled: e.target.value && false
-        });
+        this.setState({email: e.target.value});
     };
 
     handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log('Subscribe form submitted:', this.state.email);
+        const email = this.state.email;
 
-        axios.post(`${API}/basic/sign_up`, {
-            email: this.state.email
-        }, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json; version=1'
-            }
-        })
-            .then(response => {
-                this.setState({isError: false, isSubscribed: true});
+        if (email === '') this.setState({isError: true, msg: 'Email is required'});
 
-                const persistenceToken = response.data.user.persistence_token;
-                Router.push(`/welcome?persistence_token=${persistenceToken}`);
+        if (email !== '') {
+
+            axios.post(`${API}/basic/sign_up`, {
+                email: this.state.email
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json; version=1'
+                }
             })
-            .catch(error => {
-                this.setState({
-                    isError: true,
-                    isSuccess: false
+                .then(response => {
+                    this.setState({isError: false, isSubscribed: true, msg: 'Thank you for subscribing!'});
+
+                    const persistenceToken = response.data.user.persistence_token;
+                    Router.push(`/welcome?persistence_token=${persistenceToken}`);
+                })
+                .catch(error => {
+                    this.setState({isError: true, isSubscribed: false, msg: 'This email is already used'});
                 });
-            });
+        }
     };
 
     render() {
 
-        const {isSubscribed, isError} = this.state;
+        const {isSubscribed, isError, msg} = this.state;
 
         return (
-            <form onSubmit={this.handleSubmit} className="subscribe-form text-center">
+            <div>
+                <form onSubmit={this.handleSubmit} className="subscribe-form text-center">
 
-                {isSubscribed && <p className="subscribe-form__success-text">Thank you for subscribing!</p>}
+                    <div className="form-group">
+                        <input
+                            type="email"
+                            placeholder="Enter your BEST email for cheap flight deals"
+                            onChange={this.handleChange}
+                            className={'form-control ' + [isError && 'with-error', isSubscribed && 'with-success'].filter(e => !!e).join(' ')}
+                        />
+                        {isSubscribed && <p className="success-text text-center">{msg}</p>}
+                        {isError && <p className="error-text text-center">{msg}</p>}
+                    </div>
 
-                {isError && <p className="subscribe-form__error-text">Error! This email is already used.</p>}
+                    <div className="form-group">
+                        <button
+                            type="submit"
+                            className="btn btn-primary"
+                        >
+                            {this.props.btnText}
+                        </button>
 
-                <input
-                    type="email"
-                    placeholder="Enter your BEST email for cheap flight deals"
-                    onChange={this.handleChange}
-                />
+                        <p>No spam, unsubscribe at any time</p>
+                    </div>
 
-                <button
-                    type="submit"
-                    // disabled={this.state.btnDisabled}
-                    className="btn btn-primary"
-                >
-                    {this.props.btnText}
-                </button>
-
-                <p>No spam, unsubscribe at any time</p>
-
-            </form>
+                </form>
+            </div>
         );
     }
 

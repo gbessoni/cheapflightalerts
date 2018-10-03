@@ -25,7 +25,7 @@
     border: 1px solid $color-gray-light-1
     border-radius: 6px
     box-shadow: 0 5rem 20rem rgba($color-black, .5)
-    max-width: 500px
+    max-width: 780px
     margin: 5% auto 0
 
     &__close-icon
@@ -33,24 +33,38 @@
       top: 15px
       right: 15px
 
-      i
-        font-size: 20px
-        color: $color-gray
+      &:hover
         cursor: pointer
 
     &__close-link
+      font-family: 'Roboto', sans-serif
+      font-size: 12px
+      font-weight: 500
       display: block
-      margin: 3rem auto 1rem auto
+      margin: 3rem auto 2rem auto
       cursor: pointer
       text-align: center
 
     &__text
-      max-width: 600px
-      margin: 0 auto 3rem 0
+      font-family: 'Roboto', sans-serif
+      font-size: 14px
+      font-weight: 400
+      max-width: 620px
+      margin: 0 auto
       p
         font-size: $font-size-default
         line-height: 2.4rem
         color: $color-black
+        text-align: center
+        margin-bottom: 3rem
 
-    .heading-secondary i
-      font-size: 8rem
+    .heading-secondary
+      margin: 2rem 0
+
+// Responsiveness
+
+@media (max-width: 767px)
+  .heading-secondary
+    img
+      width: 100px
+      height: 100px

@@ -1,52 +1,47 @@
 .subscribe-form
-
-  max-width: 40rem
+  max-width: 65rem
+  display: flex
+  justify-content: center
   margin: 0 auto
 
-  input
-    width: 100%
-    background: none
-    border: none
-    border-bottom: 2px solid $color-primary
-    border-radius: 0!important
-    outline: none!important
-    font-size: 1.8rem
-    font-weight: 400
-    height: 5rem
-    color: $color-black
-    text-align: center
+  .with-error
+    border-color: $color-primary
 
-    &:focus
-      &::placeholder
-        color: transparent
+  .with-success
+    border-color: $color-green
 
-    &::placeholder
-      color: $color-black
-      opacity: 1
-      font-weight: 400
+  .form-control
+    width: 35rem
 
-    &:-ms-input-placeholder
-      color: $color-black
-      opacity: 1
-      font-weight: 400
+  .form-control + p
+    text-align: left
+    color: $color-primary
 
-    &:-ms-input-placeholder
-      color: $color-black
-      opacity: 1
-      font-weight: 400
+  .form-control + p.error-text
+    color: $color-primary
+
+  .form-control + p.success-text
+    color: $color-green
 
   p
+    font-family: 'Roboto', sans-serif
+    font-size: 12px
+    font-weight: 300
     color: $color-gray
-    font-size: 1.4rem
-    margin-top: 2.5rem
+    margin-top: 1rem
 
-  &__success-text, &__error-text
-    font-size: $font-size-default!important
-    font-weight: 600!important
-    margin: 1.5rem 0!important
+// Responsiveness
 
-  &__success-text
-    color: $color-green!important
+@media (max-width: 767px)
+  .subscribe-form
+    display: block!important
 
-  &__error-text
-    color: $color-primary!important
+    .form-group
+      margin-bottom: 1.5rem
+
+    .btn-primary
+      width: 100%!important
+
+    .form-control
+      width: 100%!important
+      margin-right: 0!important
