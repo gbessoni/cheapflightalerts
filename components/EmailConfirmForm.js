@@ -43,7 +43,7 @@ class EmailConfirmForm extends Component {
 
                 {isSuccess && <Success success="Your email was confirmed!"/>}
 
-                <button type="submit" className="btn btn-primary btn-lg btn-block">Confirm my email</button>
+                <button type="submit" className="btn btn-primary btn-block">Confirm my email</button>
 
             </form>
         );

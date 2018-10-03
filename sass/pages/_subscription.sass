@@ -1,12 +1,12 @@
 .subscription
-  min-height: calc(100vh - 112px - 82px - 90px)
-  padding-bottom: 8rem
+  min-height: calc(100vh - 150px - 110px - 24rem)
 
   .heading-primary
-    margin-bottom: 4rem
+    margin-bottom: 5rem
 
     h1
       font-size: 3rem
+      font-weight: 700
 
   input[type=email]
     padding: 1.6em
@@ -45,6 +45,7 @@
   // total
 
   &__total
+    margin-top: 4rem
     margin-bottom: 2rem
     font-size: $font-size-default
 
@@ -102,6 +103,7 @@
     i
       margin-right: 4px
 
+
 // Responsiveness
 
 @media (max-width: 1000px)
@@ -125,15 +127,8 @@
 @media (max-width: 600px)
   .subscription
 
-    .heading-primary
-      h1
-        font-size: 3rem!important
-
     &__content
       flex-direction: column
 
     &__left
       margin-right: 0
-
-    &__total
-      margin: 4rem 0
