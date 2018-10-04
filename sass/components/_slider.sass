@@ -1,0 +1,51 @@
+
+.home-slider
+  overflow: hidden
+
+  .slider
+    display: flex
+    align-items: center
+
+    .slider-item
+      width: 20%
+      padding: 0 15px
+      overflow: hidden
+      flex-grow: 1
+      img
+        display: block
+        width: 100%
+        border-radius: 8px
+
+      &:nth-child(2)
+        width: 10%
+
+      &:nth-child(3)
+        width: 15%
+
+      &:nth-child(4)
+        width: 20%
+
+      &:last-child
+        width: 15%
+
+
+@media (max-width: 767px)
+  .home-slider
+    display: none
+
+@media (max-width: 1920px)
+  .home-slider
+    .slider
+      width: 120%
+      position: relative
+      right: 10%
+      align-items: center
+
+
+@media (min-width: 1921px)
+  .home-slider
+    .slider
+      width: 1920px
+      position: relative
+      right: 0
+      margin: 0 auto

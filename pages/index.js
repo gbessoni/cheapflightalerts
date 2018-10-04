@@ -140,6 +140,32 @@ const Index = () => (
             </div>
         </section>
 
+
+
+        {/*Slider*/}
+        <section className="section home-slider">
+            <div className="slider">
+
+                <div className="slider-item">
+                    <img src="/static/img/gallery/1.png" alt="g1"/>
+                </div>
+                <div className="slider-item">
+                    <img src="/static/img/gallery/2.png" alt="g2"/>
+                </div>
+                <div className="slider-item">
+                    <img src="/static/img/gallery/3.png" alt="g3"/>
+                </div>
+                <div className="slider-item">
+                    <img src="/static/img/gallery/4.png" alt="g4"/>
+                </div>
+                <div className="slider-item">
+                    <img src="/static/img/gallery/5.png" alt="g5"/>
+                </div>
+
+            </div>
+        </section>
+
+
         {/* Testimonials */}
 
         <section className="section home-testimonials">
@@ -313,7 +339,7 @@ const Index = () => (
             </div>
         </section>
 
-        {/*<SubscribeModal/>*/}
+        <SubscribeModal/>
 
     </Layout>
 );

@@ -1,6 +1,6 @@
 const DealItem = ({image, date, title1, title2, isTrend, isHot}) => (
     <div className="deal-item">
-        <div className="deal-item__card" style={{ background: 'url(' + image + ')' }}>
+        <div className="deal-item__card" style={{ backgroundImage: 'url(' + image + ')' }}>
 
 
             <div className="deal-item__content">
