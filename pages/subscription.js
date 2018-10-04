@@ -10,7 +10,7 @@ import Checkout from '../components/SubscriptionCheckout';
 
 const Subscription = ({plan1, plan2}) => (
     <Layout title="Cheap Flight Alerts | Upgrade to our Premium Membership">
-        <section className="section subscription">
+        <section className="section section--top subscription">
             <div className="container">
 
                 <div className="heading-primary text-center">

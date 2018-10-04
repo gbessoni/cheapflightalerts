@@ -19,12 +19,6 @@ const Premium = () => (
                     </h1>
                 </div>
 
-            </div>
-        </section>
-
-        <section className="section premium-promo">
-            <div className="container">
-
                 <div className="heading-secondary heading-secondary--extra-bold text-center">
                     <h2>
                         Free members miss out on 75% of flight deals
@@ -34,11 +28,11 @@ const Premium = () => (
 
                 <div className="heading-tertiary text-center">
                     <h3>
-                        <i className="ion-plus-round" />
+                        <span className="plus">+</span>
                         Filter by "When to fly dates"
                     </h3>
                     <h3>
-                        <i className="ion-plus-round" />
+                        <span className="plus">+</span>
                         Filter by "Favorite destinations"
                     </h3>
                 </div>
@@ -48,7 +42,7 @@ const Premium = () => (
 
         {/* Pricing */}
 
-        <Pricing withIcon={true} showBtn={true}/>
+        <Pricing withIcon={true} showBtn={true} isPremium={true} />
 
         {/* Comparison */}
 
@@ -96,10 +90,10 @@ const Premium = () => (
                             <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
                             <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
                             <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><b>–</b></div>
+                            <div className='td'><b>–</b></div>
+                            <div className='td'><b>–</b></div>
+                            <div className='td'><b>–</b></div>
                         </div>
                         <div className="column">
                             <div className='th'>Scott’s</div>
@@ -107,11 +101,11 @@ const Premium = () => (
                             <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
                             <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
                             <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><b>–</b></div>
+                            <div className='td'><b>–</b></div>
+                            <div className='td'><b>–</b></div>
+                            <div className='td'><b>–</b></div>
+                            <div className='td'><b>–</b></div>
                         </div>
 
                     </div>

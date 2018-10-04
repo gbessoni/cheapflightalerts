@@ -11,7 +11,7 @@ const Preferences = ({premiumUser, premiumToken, basicUser, persistenceToken}) =
 
         return (
             <Layout title="Cheap Flight Alerts | Preferences" userEmail={premiumUser && premiumUser.email}>
-                <section className="section preferences">
+                <section className="section section--top preferences">
                     <div className="container">
 
                         <div className="heading-primary text-center">
@@ -38,12 +38,14 @@ const Preferences = ({premiumUser, premiumToken, basicUser, persistenceToken}) =
 
         return (
             <Layout title="Preferences">
-                <div className="container">
+                <div className="section section--top">
+                    <div className="container">
 
-                    <div className="heading-non-auth text-center">
-                        <h3>You are not authorized to view this content.</h3>
+                        <div className="heading-non-auth text-center">
+                            <h3>You are not authorized to view this content.</h3>
+                        </div>
+
                     </div>
-
                 </div>
             </Layout>
         );

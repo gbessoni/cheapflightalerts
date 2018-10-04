@@ -9,18 +9,19 @@
     color: white
     position: relative
     background: rebeccapurple
-    border-radius: 8px
-    background: url("/static/img/deal-item-1.jpg")
+    border-radius: .8rem
+    background-position: center
     box-shadow: 0 2px 4px 0 #f4f6fa
     height: 310px
+    overflow: hidden
 
   &__content
-    padding: 20px
+    padding: 2rem
     background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.24)), linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28))
     height: 100%
 
   &__date
-    font-size: 14px
+    font-size: $font-size-default
     line-height: 1.57
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.08)
 
@@ -48,4 +49,7 @@
 @media (max-width: 767px)
   .deal-item
     width: 100%!important
-    margin-top: 15px
+    padding: 7.5px 15px!important
+
+    &:first-child
+      margin-top: 1.5rem!important

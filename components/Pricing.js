@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-const Pricing = ({showBtn}) => (
-    <section className="section pricing">
+const Pricing = ({showBtn, isPremium}) => (
+    <section className={`section pricing ${isPremium && 'premium-pricing'}`}>
         <div className="container">
 
             <div className="heading-secondary heading-secondary--bold text-center">

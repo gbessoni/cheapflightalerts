@@ -61,7 +61,7 @@ class Login extends Component {
 
         return (
             <Layout title="Cheap Flight Alerts | Premium Membership Login">
-                <section className="section">
+                <section className="section section--top">
                     <div className="container">
 
                         <form onSubmit={this.handleSubmit} className="auth-form">

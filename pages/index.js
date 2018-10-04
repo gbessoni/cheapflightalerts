@@ -53,51 +53,46 @@ const Index = () => (
                 <div className="custom-row">
 
                     <DealItem
-                        image={'/static/img/deal-item-1.jpg'}
+                        image={'/static/img/deals/1.png'}
                         date={getDateBeforeCurrent(3)}
-                        title1="SFO to Bali"
-                        title2="Normal roundtrip"
-                        price1="$364"
-                        price2="$1000"
-                        comments={3}
+                        title1="SFO to Bali $364"
+                        title2="Normal roundtrip $1000"
+                        isTrend={true}
+                        isHot={true}
                     />
                     <DealItem
-                        image={'/static/img/deal-item-2.jpg'}
+                        image={'/static/img/deals/2.png'}
                         date={getDateBeforeCurrent(4)}
-                        title1="Atlanta to Lima"
-                        title2="Normal roundtrip"
-                        price1="$165"
-                        price2="$800"
-                        comments={11}
+                        title1="Atlanta to Lima $165"
+                        title2="Normal roundtrip $800"
+                        isTrend={true}
+                        isHot={true}
                     />
                     <DealItem
-                        image={'/static/img/deal-item-3.jpg'}
+                        image={'/static/img/deals/3.png'}
                         date={getDateBeforeCurrent(5)}
-                        title1="NYC to Paris"
-                        title2="Normal roundtrip"
-                        price1="$260"
-                        price2="$900"
-                        comments={4}
+                        title1="NYC to Paris $260"
+                        title2="Normal roundtrip $900"
+                        isTrend={false}
+                        isHot={true}
                     />
 
                     <DealItem
-                        image={'/static/img/deal-item-3.jpg'}
+                        image={'/static/img/deals/5.png'}
                         date={getDateBeforeCurrent(5)}
-                        title1="NYC to Paris"
-                        title2="Normal roundtrip"
-                        price1="$260"
-                        price2="$900"
-                        comments={4}
+                        title1="NYC to Canada $189"
+                        title2="Normal roundtrip $488"
+                        isTrend={true}
+                        isHot={true}
                     />
 
                     <DealItem
-                        image={'/static/img/deal-item-3.jpg'}
+                        image={'/static/img/deals/4.png'}
                         date={getDateBeforeCurrent(5)}
-                        title1="NYC to Paris"
-                        title2="Normal roundtrip"
-                        price1="$260"
-                        price2="$900"
-                        comments={4}
+                        title1="Atlanta to Lima $165"
+                        title2="Normal roundtrip $800"
+                        isTrend={true}
+                        isHot={false}
                     />
 
                 </div>
@@ -163,7 +158,7 @@ const Index = () => (
                         <div className="testimonial-item__card">
 
                             <div className="testimonial-item__img">
-                                <img src="/static/img/user-3.jpg" alt="Jonathan F."/>
+                                <img src="/static/img/testimonials/1.png" alt="City"/>
                             </div>
 
 
@@ -172,7 +167,7 @@ const Index = () => (
                                 <img src="/static/img/quotes.svg" alt="quote" className="testimonial-item__quotes"/>
 
                                 <div className="testimonial-item__author-img">
-                                    <img src="/static/img/user.png" alt="Jackie L."/>
+                                    <img src="/static/img/testimonials/user1.png" alt="Jonathan F."/>
                                 </div>
 
                                 <div className="testimonial-item__header">
@@ -200,7 +195,7 @@ const Index = () => (
                         <div className="testimonial-item__card">
 
                             <div className="testimonial-item__img">
-                                <img src="/static/img/user-3.jpg" alt="Jonathan F."/>
+                                <img src="/static/img/testimonials/2.png" alt="Mountains"/>
                             </div>
 
 
@@ -209,24 +204,24 @@ const Index = () => (
                                 <img src="/static/img/quotes.svg" alt="quote" className="testimonial-item__quotes"/>
 
                                 <div className="testimonial-item__author-img">
-                                    <img src="/static/img/user.png" alt="Jackie L."/>
+                                    <img src="/static/img/testimonials/user2.png" alt="Jackie L."/>
                                 </div>
 
                                 <div className="testimonial-item__header">
                                     <p>
-                                        Jonathan F, April 2018
+                                        Jackie L, March 2018
                                         <span>
                                         saved
-                                        <b> $1,500</b> on flights
+                                        <b> $1,200</b> on flights
                                         </span>
                                     </p>
                                 </div>
 
 
                                 <div className="testimonial-item__text">
-                                    - How could I not book this Business class flight to Barcelona for $542 roundtrip?? Saved me
-                                    over $1,500 on airfare! Absolutely an amazing deal, I did it, and I'm super excited. Your
-                                    premium newsletter awesome
+                                    - I can't thank you enough! I have been watching fares to Sydney like a hawk for nearly
+                                    5 years and this is the absolute lowest I've even seen them. It's good to know that when you
+                                    send fare alerts, they're the real deal!
                                 </div>
                             </div>
 
@@ -237,7 +232,7 @@ const Index = () => (
                         <div className="testimonial-item__card">
 
                             <div className="testimonial-item__img">
-                                <img src="/static/img/user-3.jpg" alt="Jonathan F."/>
+                                <img src="/static/img/testimonials/3.png" alt="Ocean"/>
                             </div>
 
 
@@ -246,24 +241,24 @@ const Index = () => (
                                 <img src="/static/img/quotes.svg" alt="quote" className="testimonial-item__quotes"/>
 
                                 <div className="testimonial-item__author-img">
-                                    <img src="/static/img/user.png" alt="Jackie L."/>
+                                    <img src="/static/img/testimonials/user3.png" alt="Steve M."/>
                                 </div>
 
                                 <div className="testimonial-item__header">
                                     <p>
-                                        Jonathan F, April 2018
+                                        Steve M, January 2018
                                         <span>
                                         saved
-                                        <b> $1,500</b> on flights
+                                        <b> $830</b> on flights
                                         </span>
                                     </p>
                                 </div>
 
 
                                 <div className="testimonial-item__text">
-                                    - How could I not book this Business class flight to Barcelona for $542 roundtrip?? Saved me
-                                    over $1,500 on airfare! Absolutely an amazing deal, I did it, and I'm super excited. Your
-                                    premium newsletter awesome
+                                    - We booked a trip to Dublin, Ireland for later this year on a Cheap Flight Alerts fare alert :)
+                                    I saved about $1,500 on four tickets for the family. We're so excited. Thanks so much for a great
+                                    service and doing what your team does!
                                 </div>
                             </div>
 
@@ -290,9 +285,7 @@ const Index = () => (
 
                 <div className="row">
                     <div className="col-sm-4">
-
-                        <img src="/static/img/user-3.jpg" alt="Jonathan F."/>
-
+                        <img src="/static/img/about.png" alt="Plane" width={350} height={304} />
                     </div>
                     <div className="col-sm-8">
                         <div className="home-about__text">

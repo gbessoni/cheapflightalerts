@@ -9,7 +9,7 @@ import ProfileForm from '../components/ProfileForm';
 const Profile = ({user, token, error}) => (
     <Layout title="Cheap Flight Alerts | Profile" userEmail={user.email}>
 
-        <section className="section profile-welcome text-center">
+        <section className="section section--top profile-welcome text-center">
             <div className="container">
 
                 {(user && (

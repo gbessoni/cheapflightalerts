@@ -17,7 +17,7 @@ const Welcome = ({airport, persistenceToken}) => {
 
                 {/* Welcome */}
 
-                <section className="section welcome-welcome">
+                <section className="section section--top welcome-welcome">
                     <div className="container">
 
                         <div className="heading-primary text-center">
@@ -70,11 +70,11 @@ const Welcome = ({airport, persistenceToken}) => {
 
                         <div className="heading-tertiary text-center">
                             <h3>
-                                <i className="ion-plus-round"/>
+                                <span className="plus">+</span>
                                 Filter by "When to fly dates"
                             </h3>
                             <h3>
-                                <i className="ion-plus-round"/>
+                                <span className="plus">+</span>
                                 Filter by "Favorite destinations"
                             </h3>
                         </div>

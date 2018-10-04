@@ -10,7 +10,7 @@ const EmailConfirm = ({persistenceToken}) => {
 
         return (
             <Layout title="Cheap Flight Alerts | Email confirmation">
-                <section className="section email-confirmation text-center">
+                <section className="section section--top email-confirmation text-center">
                     <div className="container">
 
                         <div className="heading-primary">
@@ -38,11 +38,13 @@ const EmailConfirm = ({persistenceToken}) => {
 
         return (
             <Layout title="Email confirmation">
-                <div className="container">
-                    <div className="heading-non-auth text-center">
-                        <h3>You are not authorized to view this content.</h3>
+                <section className="section section--top">
+                    <div className="container">
+                        <div className="heading-non-auth text-center">
+                            <h3>You are not authorized to view this content.</h3>
+                        </div>
                     </div>
-                </div>
+                </section>
             </Layout>
         );
 

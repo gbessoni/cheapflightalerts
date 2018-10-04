@@ -75,7 +75,7 @@ class ResetPassword extends Component {
 
         return (
             <Layout title="Cheap Flight Alerts | Reset password">
-                <section className="section">
+                <section className="section section--top">
 
                     <div className="container">
 

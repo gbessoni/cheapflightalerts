@@ -10,7 +10,7 @@ const NewPassword = ({perishableToken}) => {
 
         return (
             <Layout title="Cheap Flight Alerts | New password">
-                <section className="section">
+                <section className="section section--top">
                     <div className="container">
 
                         <NewPasswordForm
@@ -26,7 +26,7 @@ const NewPassword = ({perishableToken}) => {
 
         return (
             <Layout title="New password">
-                <section className="section">
+                <section className="section section--top">
 
                     <div className="container">
 

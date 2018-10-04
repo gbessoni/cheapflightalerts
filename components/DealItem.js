@@ -1,25 +1,25 @@
-const DealItem = ({image, date, title1, title2, price1, price2, comments}) => (
+const DealItem = ({image, date, title1, title2, isTrend, isHot}) => (
     <div className="deal-item">
-        <div className="deal-item__card">
+        <div className="deal-item__card" style={{ background: 'url(' + image + ')' }}>
 
 
             <div className="deal-item__content">
                 <div className="deal-item__date">
-                    September 15, 2018
+                    {date}
                 </div>
 
                 <div className="deal-item__bottom">
 
                     <div className="deal-item__icons">
-                        <img src={'/static/img/stats.svg'} alt="stats" width={20} height={20} />
-                        <img src={'/static/img/hot-filled.svg'} alt="hot" width={20} height={20} />
+                        {isTrend && <img src={'/static/img/stats.svg'} alt="stats" width={20} height={20} />}
+                        {isHot && <img src={'/static/img/hot-filled.svg'} alt="hot" width={20} height={20} />}
                     </div>
                     <div className="deal-item__title">
-                        SFO to Bali $364
+                        {title1}
                     </div>
 
                     <div className="deal-item__price">
-                        Normal roundtrip $1000
+                        {title2}
                     </div>
 
                 </div>
