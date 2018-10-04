@@ -79,16 +79,17 @@ const Index = () => (
 
                     <DealItem
                         image={'/static/img/deals/5.png'}
-                        date={getDateBeforeCurrent(5)}
+                        date={getDateBeforeCurrent(6)}
                         title1="NYC to Canada $189"
                         title2="Normal roundtrip $488"
+                        isTrend={true}
                         isTrend={true}
                         isHot={true}
                     />
 
                     <DealItem
                         image={'/static/img/deals/4.png'}
-                        date={getDateBeforeCurrent(5)}
+                        date={getDateBeforeCurrent(7)}
                         title1="Atlanta to Lima $165"
                         title2="Normal roundtrip $800"
                         isTrend={true}
