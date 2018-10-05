@@ -63,8 +63,6 @@ Preferences.getInitialProps = async (ctx) => {
 
     if (token) {
 
-        console.log(this.props);
-
         try {
 
             const response = await axios.get(`${API}/premium/profile`, {
