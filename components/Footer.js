@@ -25,6 +25,13 @@ const Footer = () => (
                     <a href="https://www.instagram.com/flightalertdeals/">Instagram</a>
                 </li>
 
+                <li>
+                    <a href="https://www.shuttlefare.com/">Airport Shuttle</a>
+                </li>
+                <li>
+                    <a href="https://parkingaccess.com/">Airport Parking</a>
+                </li>
+
             </ul>
 
             <div className="footer__copyright">

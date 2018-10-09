@@ -32,6 +32,15 @@ const Welcome = ({airport, persistenceToken}) => {
                             address provided.
                             <br/>
                             <br/>
+                            If you can’t see it in your inbox, please check your junk folder as sometimes we get lost along the way.
+                            <br/>
+                            <br/>
+                            If you’re still having issues finding the confirmation email after a few minutes, then email us at <a href="mailto:confirm_email@cheapflightalerts.net" class="link">confirm_email@cheapflightalerts.net</a> and we’ll get it sorted 🙂
+                            <br/>
+                            <br/>
+                            Note: If the confirmation email is showing up blank, just hit reply and let us know. We’ll confirm you manually from our end.
+                            <br/>
+                            <br/>
                             Second, <b>IMPORTANT</b>: Please enter in your preferred departure airport (we cannot
                             deliver cheap flight deals until you've entered in your local airport).
                         </p>
