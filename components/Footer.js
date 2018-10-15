@@ -32,6 +32,12 @@ const Footer = () => (
                     <a href="https://parkingaccess.com/">Airport Parking</a>
                 </li>
 
+                <li>
+                    <a href="tel:8008514528">
+                        (800) 851-4528
+                    </a>
+                </li>
+
             </ul>
 
             <div className="footer__copyright">

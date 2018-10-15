@@ -70,6 +70,12 @@ const Header = ({isAuthenticated, deauthenticate}) => (
                             </a>
                         </Link>
                     </li>}
+
+                    <li>
+                        <a href="tel:8008514528">
+                            (800) 851-4528
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
