@@ -2,6 +2,7 @@ import {Component} from 'react';
 import axios from 'axios';
 import {API} from '../config';
 import Router from 'next/router';
+import {getCookie} from '../utils/cookie-default';
 
 class SubscribeForm extends Component {
 
@@ -24,8 +25,11 @@ class SubscribeForm extends Component {
 
         if (email !== '') {
 
+            const source = getCookie('referrerURL');
+
             axios.post(`${API}/basic/sign_up`, {
-                email: this.state.email
+                email: this.state.email,
+                source
             }, {
                 headers: {
                     'Content-Type': 'application/json',
