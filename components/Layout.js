@@ -72,6 +72,8 @@ const Layout = ({title, children, userEmail}) => (
             `
         }}/>
 
+        <script async src='https://r.wdfl.co/rw.js' data-rewardful='117537'></script>
+
     </div>
 );
 

@@ -21,6 +21,10 @@ class CheckoutForm extends Component {
         plan2: this.props.plan2 || ''
     };
 
+    componentDidMount() {
+        Rewardful.Forms.attach();
+    }
+
     handleChange = (e) => {
         const {errors} = this.state;
         const input = e.target.name;
@@ -55,6 +59,8 @@ class CheckoutForm extends Component {
 
         if (isValid && isCardValid === true) {
 
+            const referral = Rewardful.referral;
+
             this.setState({isProcessing: true});
 
             this.props.stripe.createToken({name: 'Free User'}).then(({token, error}) => {
@@ -73,7 +79,10 @@ class CheckoutForm extends Component {
                     const data = {
                         email: email,
                         plan_id: subscriptionType,
-                        stripe_id: token.id
+                        stripe_id: token.id,
+                        metadata: {
+                            referral: referral
+                        }
                     };
 
                     // clear card details
@@ -119,7 +128,7 @@ class CheckoutForm extends Component {
         const {subscriptionType, plan1, plan2, isCardValid, isError, errorMsg, isSuccess, isProcessing, errors} = this.state;
 
         return (
-            <form onSubmit={this.handleSubmit} className="subscription__content">
+            <form onSubmit={this.handleSubmit} className="subscription__content" data-rewardful>
 
                 {/* left */}
 
