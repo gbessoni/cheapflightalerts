@@ -16,9 +16,12 @@ class Index extends Component {
         {/* Save url referrer in cookie */}
 
         let referrer;
+        const isFromEmail = document.location.search.split('ref_email=')[1];
 
-        if (document.referrer.indexOf('http://localhost:3000/') === -1 && document.referrer !== '') {
+        if (document.referrer.indexOf('http://localhost:3000/') === -1 && document.referrer !== '' && !isFromEmail) {
             referrer = document.referrer;
+        } else if (isFromEmail) {
+            referrer = 'email';
         } else {
             referrer = 'direct';
         }
