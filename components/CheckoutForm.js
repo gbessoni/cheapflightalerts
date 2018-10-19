@@ -80,9 +80,7 @@ class CheckoutForm extends Component {
                         email: email,
                         plan_id: subscriptionType,
                         stripe_id: token.id,
-                        metadata: {
-                            referral: referral
-                        }
+                        source: referral
                     };
 
                     // clear card details
