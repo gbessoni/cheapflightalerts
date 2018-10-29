@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 import '../sass/main.sass';
 
-const Layout = ({title, children, userEmail}) => (
+const Layout = ({title, children, userEmail, isWelcomePage}) => (
     <div>
 
         <Head>
@@ -48,6 +48,25 @@ const Layout = ({title, children, userEmail}) => (
                     profitwell('user_email', '${userEmail ? userEmail : ''}');
                 `
             }}/>
+
+            <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1036423859"></script>
+
+            <script dangerouslySetInnerHTML={{
+                __html: `             
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'AW-1036423859');
+                `
+            }}/>
+
+            {isWelcomePage ? (
+                <script dangerouslySetInnerHTML={{
+                    __html: `
+                        gtag('event', 'conversion', {'send_to': 'AW-1036423859/pxOFCNK28IsBELOlmu4D'});
+                    `
+                }}/>
+            ) : ''}
 
         </Head>
 

@@ -13,7 +13,7 @@ const Welcome = ({airport, persistenceToken}) => {
     if (persistenceToken) {
         return (
 
-            <Layout title="Cheap Flight Alerts | Welcome">
+            <Layout title="Cheap Flight Alerts | Welcome" isWelcomePage={true}>
 
                 {/* Welcome */}
 
@@ -27,25 +27,11 @@ const Welcome = ({airport, persistenceToken}) => {
                             </h1>
                         </div>
 
-                        <p>
-                            First, please check your email to confirm you want to receive cheap flight alerts to the
-                            address provided.
-                            <br/>
-                            <br/>
-                            If you can’t see it in your inbox, please check your junk folder as sometimes we get lost along the way.
-                            <br/>
-                            <br/>
-                            If you’re still having issues finding the confirmation email after a few minutes, then email us at <a href="mailto:confirm_email@cheapflightalerts.net" className="link">confirm_email@cheapflightalerts.net</a> and we’ll get it sorted 🙂
-                            <br/>
-                            <br/>
-                            Note: If the confirmation email is showing up blank, just hit reply and let us know. We’ll confirm you manually from our end.
-                            <br/>
-                            <br/>
-                            Second, <b>IMPORTANT</b>: Please enter in your preferred departure airport (we cannot
-                            deliver cheap flight deals until you've entered in your local airport).
-                        </p>
-
                         {/* Airport Form */}
+
+                        <p>
+                            Please enter in your preferred departure airport:
+                        </p>
 
                         <AirportForm
                             airport={airport}
@@ -60,6 +46,20 @@ const Welcome = ({airport, persistenceToken}) => {
                             airports (only 1 airport allowed with free membership), add destinations and desired travel
                             dates, plus get domestic flight deals. <b>Upgrade</b> for one year and receive <b>50%
                             off</b> our normal price!
+                        </p>
+
+                        <p>
+                            Please check your email to confirm you want to receive cheap flight alerts to the
+                            address provided.
+                            <br/>
+                            <br/>
+                            If you can’t see it in your inbox, please check your junk folder as sometimes we get lost along the way.
+                            <br/>
+                            <br/>
+                            If you’re still having issues finding the confirmation email after a few minutes, then email us at <a href="mailto:confirm_email@cheapflightalerts.net" className="link">confirm_email@cheapflightalerts.net</a> and we’ll get it sorted 🙂
+                            <br/>
+                            <br/>
+                            Note: If the confirmation email is showing up blank, just hit reply and let us know. We’ll confirm you manually from our end.
                         </p>
 
                     </div>
