@@ -1,16 +1,16 @@
 **Cheap Flight Alerts Frontend**
 
-How to install project locally for dev:
+How to start project locally for development:
 
 - **npm i**
 - **npm run dev**
 
-How to install project locally for prod:
+How to build and deploy project for prod:
 
-- **npm i**
-- **npm run build**
-- **npm start**
-
-To start project on cloud with PM2:
-
-- **pm2 start npm --name "next" -- start**
+- Access server with ip and pwd given.
+- Enter the project folder **cd cheapflightalerts**
+- Get all fresh changes from git repo **git pull**
+- Install all dependencies if something new was installed during development **npm i**
+- Stop server **pm2 stop all**
+- Build the project **npm run build**
+- Start server **pm2 start npm --name "next" -- start**
