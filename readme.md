@@ -2,6 +2,7 @@
 
 How to start project locally for development:
 
+- Put ignored/missing file **prod.js** in project **/config** folder
 - **npm i**
 - **npm run dev**
 
