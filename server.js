@@ -47,6 +47,12 @@ app.prepare()
       app.render(req, res, actualPath, queryParams);
     });
 
+  server.get('/deals/:from_airport?', (req, res) => {
+      const actualPath = '/deals';
+      const queryParams = { from_airport: req.params.from_airport};
+      app.render(req, res, actualPath, queryParams);
+  });
+
     server.get('*', (req, res) => {
       return handle(req, res);
     });

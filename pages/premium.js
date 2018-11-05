@@ -21,7 +21,9 @@ const Premium = () => (
 
                 <div className="heading-secondary heading-secondary--extra-bold text-center">
                     <h2>
-                        Free members miss out on 75% of flight deals
+                        Free members miss out on 75% of flight deals.
+                        Our deals are so good, they sell fast. As a Premium Subscribers you get deals 30 minutes before
+                        free members! A must have for International travelers.
                         <span>(Domestic + International Flight Deals Included)</span>
                     </h2>
                 </div>
@@ -42,7 +44,7 @@ const Premium = () => (
 
         {/* Pricing */}
 
-        <Pricing withIcon={true} showBtn={true} isPremium={true} />
+        <Pricing withIcon={true} showBtn={true} isPremium={true}/>
 
         {/* Comparison */}
 
@@ -73,23 +75,37 @@ const Premium = () => (
                         </div>
                         <div className="column">
                             <div className='th'>Cheap Flight Alerts</div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
                         </div>
                         <div className="column">
                             <div className='th'>DollarFlightClub</div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
                             <div className='td'><b>–</b></div>
                             <div className='td'><b>–</b></div>
                             <div className='td'><b>–</b></div>
@@ -97,10 +113,14 @@ const Premium = () => (
                         </div>
                         <div className="column">
                             <div className='th'>Scott’s</div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
-                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28} /></div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
+                            <div className='td'><img src={'/static/img/check.svg'} alt="Check" width={28} height={28}/>
+                            </div>
                             <div className='td'><b>–</b></div>
                             <div className='td'><b>–</b></div>
                             <div className='td'><b>–</b></div>
@@ -131,10 +151,11 @@ const Premium = () => (
                     <div className="custom-col">
                         <div className="more-card">
                             <div className="text-center">
-                                <img src={'/static/img/ico-team.svg'} alt="Team" width={140} height={140} />
+                                <img src={'/static/img/ico-team.svg'} alt="Team" width={140} height={140}/>
                             </div>
                             <h4>Save time</h4>
-                            <p>We search far and wide to bring you the best deals, and when we find it, your Inbox will know
+                            <p>We search far and wide to bring you the best deals, and when we find it, your Inbox will
+                                know
                                 about it.</p>
                         </div>
                     </div>
@@ -142,21 +163,23 @@ const Premium = () => (
                     <div className="custom-col">
                         <div className="more-card">
                             <div className="text-center">
-                                <img src={'/static/img/ico-news.svg'} alt="News" width={140} height={140} />
+                                <img src={'/static/img/ico-news.svg'} alt="News" width={140} height={140}/>
                             </div>
                             <h4>Have an idea of when and where you want to fly?</h4>
                             <p>Don’t worry, we allow you to filter by desired fly dates and destinations. We won’t flood
-                                your inbox with deals to places you don’t want to go or during dates you can’t travel.</p>
+                                your inbox with deals to places you don’t want to go or during dates you can’t
+                                travel.</p>
                         </div>
                     </div>
 
                     <div className="custom-col">
                         <div className="more-card">
                             <div className="text-center">
-                                <img src={'/static/img/ico-team.svg'} alt="Team" width={140} height={140} />
+                                <img src={'/static/img/ico-team.svg'} alt="Team" width={140} height={140}/>
                             </div>
                             <h4>Win a free ticket every month</h4>
-                            <p>We are giving away a free flight to one of our <span>Premium</span> members every month. Good
+                            <p>We are giving away a free flight to one of our <span>Premium</span> members every month.
+                                Good
                                 Luck!</p>
                         </div>
                     </div>
@@ -164,7 +187,7 @@ const Premium = () => (
                     <div className="custom-col">
                         <div className="more-card">
                             <div className="text-center">
-                                <img src={'/static/img/ico-news.svg'} alt="News" width={140} height={140} />
+                                <img src={'/static/img/ico-news.svg'} alt="News" width={140} height={140}/>
                             </div>
                             <h4>Pays for itself - Yes - Plus way more</h4>
                             <p>Buy one ticket, save on average $500 on international and $150 on Domestic and your

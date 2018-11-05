@@ -6,11 +6,15 @@ const Footer = () => (
             <ul>
 
                 <li>
+                    <Link href="/deals">
+                        <a>Deals</a>
+                    </Link>
+                </li>
+                <li>
                     <Link href="/about">
                         <a>About</a>
                     </Link>
                 </li>
-
                 <li>
                     <a href="http://cheapflights.helpsite.io/">FAQ</a>
                 </li>

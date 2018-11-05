@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 import '../sass/main.sass';
 
-const Layout = ({title, children, userEmail, isWelcomePage}) => (
+const Layout = ({title, description, children, userEmail, isWelcomePage}) => (
     <div>
 
         <Head>
@@ -14,8 +14,13 @@ const Layout = ({title, children, userEmail, isWelcomePage}) => (
 
             <title>{title}</title>
 
-            <meta name="description"
-                  content="Cheap Flight Alerts.net: NUMBER 1 For Cheap Flights. LOW AIRFARE On International and Domestic Flights. CHEAP DEALS straight to your inbox!"/>
+            {!description ? (
+                <meta name="description"
+                  content="Cheap Flight Alerts: NUMBER 1 For Cheap Flights. LOW AIRFARE On International and Domestic Flights. CHEAP DEALS straight to your inbox!"/>
+                ) : (
+                <meta name="description" content={description}/>
+                )
+            }
 
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 

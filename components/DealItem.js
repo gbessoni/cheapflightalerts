@@ -1,71 +1,124 @@
-const DealItem = ({image, date, title1, title2, isTrend, isHot}) => (
-    <div className="deal-item">
-        <div className="deal-item__card" style={{ backgroundImage: 'url(' + image + ')' }}>
+import {getDateBeforeCurrent} from "../utils/date";
+
+const DealItem = ({image, date, title1, title2, isTrend, isHot, isAirportDeal, flightDetails}) => {
+    if (!isAirportDeal) {
+        return (
+            <div className="deal-item">
+                <div className="deal-item__card" style={{backgroundImage: 'url(' + image + ')'}}>
 
 
-            <div className="deal-item__content">
-                <div className="deal-item__date">
-                    {date}
-                </div>
+                    <div className="deal-item__content">
+                        <div className="deal-item__date">
+                            {date}
+                        </div>
 
-                <div className="deal-item__bottom">
+                        <div className="deal-item__bottom">
 
-                    <div className="deal-item__icons">
-                        {isTrend && <img src={'/static/img/stats.svg'} alt="stats" width={20} height={20} />}
-                        {isHot && <img src={'/static/img/hot-filled.svg'} alt="hot" width={20} height={20} />}
+                            <div className="deal-item__icons">
+                                {isTrend && <img src={'/static/img/stats.svg'} alt="stats" width={20} height={20}/>}
+                                {isHot && <img src={'/static/img/hot-filled.svg'} alt="hot" width={20} height={20}/>}
+                            </div>
+                            <div className="deal-item__title">
+                                {title1}
+                            </div>
+
+                            <div className="deal-item__price">
+                                {title2}
+                            </div>
+
+                        </div>
+
                     </div>
-                    <div className="deal-item__title">
-                        {title1}
-                    </div>
-
-                    <div className="deal-item__price">
-                        {title2}
-                    </div>
-
-                </div>
-
-            </div>
 
 
+                    {/*<div className="deal-item__header">*/}
 
-            {/*<div className="deal-item__header">*/}
-
-                {/*<div className="deal-item__img">*/}
+                    {/*<div className="deal-item__img">*/}
                     {/*<img src={image} alt={title1} />*/}
-                {/*</div>*/}
+                    {/*</div>*/}
 
-                {/*<div className="deal-item__comments">*/}
+                    {/*<div className="deal-item__comments">*/}
                     {/*<span>{comments}</span> comments*/}
-                {/*</div>*/}
+                    {/*</div>*/}
 
-                {/*<div className="deal-item__labels">*/}
+                    {/*<div className="deal-item__labels">*/}
                     {/*<i className="ion-arrow-graph-up-right"/>*/}
                     {/*<i className="ion-flame"/>*/}
-                {/*</div>*/}
+                    {/*</div>*/}
 
-                {/*<div className="deal-item__info">*/}
+                    {/*<div className="deal-item__info">*/}
                     {/*<div className="deal-item__info__date">*/}
-                        {/*{date}*/}
+                    {/*{date}*/}
                     {/*</div>*/}
                     {/*<div className="deal-item__info__share">*/}
-                        {/*<a href="#">*/}
-                            {/*<i className="ion-ios-paperplane"/>*/}
-                        {/*</a>*/}
+                    {/*<a href="#">*/}
+                    {/*<i className="ion-ios-paperplane"/>*/}
+                    {/*</a>*/}
                     {/*</div>*/}
                     {/*<div className="deal-item__info__read-more">*/}
-                        {/*<a href="#">Read more</a>*/}
+                    {/*<a href="#">Read more</a>*/}
                     {/*</div>*/}
-                {/*</div>*/}
+                    {/*</div>*/}
 
-            {/*</div>*/}
+                    {/*</div>*/}
 
-            {/*<div className="deal-item__body">*/}
-                {/*<h4>{title1} <span>{price1}</span></h4>*/}
-                {/*<h4>{title2} {price2}</h4>*/}
-            {/*</div>*/}
+                    {/*<div className="deal-item__body">*/}
+                    {/*<h4>{title1} <span>{price1}</span></h4>*/}
+                    {/*<h4>{title2} {price2}</h4>*/}
+                    {/*</div>*/}
 
-        </div>
-    </div>
-);
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div className="deal-item deal-item-airports">
+                <div className="deal-item__card deal-item__card__airports">
+
+                    <div className="deal-item__content deal-item__content__airports">
+                        <div className="deal-item__airports__title">
+                            <span>{flightDetails.departure_airport}</span> To <span>{flightDetails.arrival_airport}</span>
+                        </div>
+
+                        <div className="deal-item__airports__price">
+                            From: <span className="deal-item__airports__price__primary">{flightDetails.price}</span>
+                            <span
+                                className="deal-item__airports__price__secondary">(Regular: {flightDetails.normal_price})</span>
+                        </div>
+
+                        <div className="deal-item__airports__airlines">
+                            Airlines: {flightDetails.airlines.map((key, index) =>
+                            <span className="deal-item__airports__airlines__badge">{key}</span>
+                        )}
+                        </div>
+
+                        <div className="deal-item__airports__airlines">
+                            Travel Dates: {flightDetails.date_ranges.map((key, index) =>
+                            <time dateTime={key.from} className="deal-item__airports__airlines__badge">{key.from}
+                                <span>&mdash;</span> {key.to}</time>
+                        )}
+                        </div>
+
+                        <div className="deal-item__airports__airlines">
+                            Expiration: <span
+                            className="deal-item__airports__airlines__small">{flightDetails.expiration}</span>
+                        </div>
+
+                        <div className="deal-item__airports__airlines">
+                            Booking Links: {flightDetails.links['Sample Google Flights Search'] &&
+                        <a href={flightDetails.links['Sample Google Flights Search']} rel="nofollow" target="_blank">Google Flights</a>
+                        }
+                        &nbsp;&nbsp;
+                            {flightDetails.links['Sample Momondo Search'] &&
+                            <a href={flightDetails.links['Sample Momondo Search']} rel="nofollow" target="_blank">Momondo</a>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        )
+    }
+};
 
 export default DealItem;

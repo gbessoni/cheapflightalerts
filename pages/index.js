@@ -108,7 +108,6 @@ class Index extends Component {
                                 title1="NYC to Canada $189"
                                 title2="Normal roundtrip $488"
                                 isTrend={true}
-                                isTrend={true}
                                 isHot={true}
                             />
 

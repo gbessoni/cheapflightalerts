@@ -4,7 +4,7 @@
   width: 33.33%
   padding: 15px
 
-  &:nth-child(4)
+  &:not(.deal-item-airports):nth-child(4)
     width: 66.66%
 
   &__card
@@ -18,11 +18,18 @@
     background-position: center
     background-size: cover
 
+    &__airports
+      color: black
+      height: auto
+      border: 1px solid rgba(black, 0.05)
 
   &__content
     padding: 2rem
     background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.24)), linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.28))
     height: 100%
+
+    &__airports
+      background: white
 
   &__date
     font-size: $font-size-default
@@ -43,6 +50,67 @@
     font-weight: 500
     line-height: 1.45
     margin: 10px 0 5px
+
+  &__airports
+
+    &__title
+      font-size: 1.75rem
+      color: $color-primary
+      font-weight: 500
+      line-height: 1.45
+      margin: 10px 0 5px
+
+      span
+        color: black
+
+    &__price
+      margin-top: 1rem
+      font-weight: 500
+      font-size: 1.5rem
+
+      &__primary
+        color: $color-primary
+
+      &__secondary
+        color: #868e96
+        margin-left: .25rem
+        font-weight: normal
+        font-size: 1.4rem
+
+    &__airlines
+      margin-top: 1rem
+      font-weight: 500
+      font-size: 1.5rem
+
+      a
+        color: $color-primary
+        font-weight: normal
+        font-size: 1.4rem
+        text-decoration: underline
+
+        &:hover
+          text-decoration: none
+
+      &__small
+        color: #868e96
+        font-weight: normal
+        font-size: 1.4rem
+
+      &__badge
+        display: inline-block
+        padding: .3rem .4rem
+        font-size: 1.2rem
+        font-weight: 500
+        line-height: 1
+        white-space: nowrap
+        vertical-align: baseline
+        border-radius: .25rem
+        border: 1px solid rgba(black, 0.05)
+        color: #868e96
+        margin-left: .5rem
+
+        span
+          color: #868e96
 
 // Responsiveness
 
