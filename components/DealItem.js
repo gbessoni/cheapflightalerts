@@ -105,13 +105,9 @@ const DealItem = ({image, date, title1, title2, isTrend, isHot, isAirportDeal, f
                         </div>
 
                         <div className="deal-item__airports__airlines">
-                            Booking Links: {flightDetails.links['Sample Google Flights Search'] &&
-                        <a href={flightDetails.links['Sample Google Flights Search']} rel="nofollow" target="_blank">Google Flights</a>
-                        }
-                        &nbsp;&nbsp;
-                            {flightDetails.links['Sample Momondo Search'] &&
-                            <a href={flightDetails.links['Sample Momondo Search']} rel="nofollow" target="_blank">Momondo</a>
-                            }
+                            Booking Links: {Object.keys(flightDetails.links).map((key, index) =>
+                            <a href={flightDetails.links[key]} rel="nofollow" target="_blank">{key}</a>
+                        )}
                         </div>
                     </div>
 
