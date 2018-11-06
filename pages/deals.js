@@ -48,7 +48,7 @@ const Deals = ({from_airport, flights, airportDetails}) => {
     } else {
         return (
             <Layout title={'Cheap Flight Alerts | Top Cheap Flight Deals From ' + airportDetails.name}
-                    description={'Best discounts, hidden offers and error fares for the flights departing from ' + airportDetails.name + '. Don\'t miss an incredible cheap flight deal to your dream destination. Join thousands of other members, saving an average of $489 per ticket booked!'}>
+                    description={'Best discounts, hidden offers and error fares for the flights departing from_airport ' + airportDetails.name + '. Don\'t miss an incredible cheap flight deal to your dream destination. Join thousands of other members, saving an average of $489 per ticket booked!'}>
 
                 <section className="section section--top about">
                     <div className="container">
@@ -83,7 +83,8 @@ const Deals = ({from_airport, flights, airportDetails}) => {
 Deals.getInitialProps = async function (ctx) {
     initialize(ctx);
 
-    const {from_airport} = ctx.query;
+    const from_airport = ctx.query.from_airport;
+    console.log(ctx.query);
     let airportDetails = {};
 
     const response = await axios.get(`${API}/flights?from=${!from_airport ? '' : from_airport.toUpperCase()}`, {
