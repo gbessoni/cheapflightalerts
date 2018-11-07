@@ -77,13 +77,11 @@ const DealItem = ({image, date, title1, title2, isTrend, isHot, isAirportDeal, f
 
                     <div className="deal-item__content deal-item__content__airports">
                         <div className="deal-item__airports__title">
-                            <span>{flightDetails.departure_airport}</span> To <span>{flightDetails.arrival_airport}</span>
+                            <span>{flightDetails.departure_airport.city}</span> to <span>{flightDetails.arrival_airport.city}</span> {flightDetails.price}
                         </div>
 
                         <div className="deal-item__airports__price">
-                            From: <span className="deal-item__airports__price__primary">{flightDetails.price}</span>
-                            <span
-                                className="deal-item__airports__price__secondary">(Regular: {flightDetails.normal_price})</span>
+                            <span className="deal-item__airports__price__secondary">Normal roundtrip {flightDetails.normal_price}</span>
                         </div>
 
                         <div className="deal-item__airports__airlines">

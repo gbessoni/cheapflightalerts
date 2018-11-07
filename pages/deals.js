@@ -6,6 +6,7 @@ import TopAirports from '../components/TopAirports';
 import axios from "axios";
 import {API} from "../config";
 import DealItem from "../components/DealItem";
+import SubscribeForm from '../components/SubscribeForm';
 
 const airports = require('../utils/airports');
 
@@ -36,6 +37,16 @@ const Deals = ({from_airport, flights, airportDetails}) => {
                             )}
                         </div>
 
+
+                        {/* Subscribe Form */}
+
+                        <div className="cta-section">
+                            <h3>Never miss out on any deal! Get exclusive Cheap Flight Alerts right to your inbox.</h3>
+                            <SubscribeForm
+                                btnText="Send me cheap flight deals"
+                            />
+                        </div>
+
                     </div>
                 </section>
 
@@ -50,7 +61,7 @@ const Deals = ({from_airport, flights, airportDetails}) => {
             <Layout title={'Cheap Flight Alerts | Top Cheap Flight Deals From ' + airportDetails.name}
                     description={'Best discounts, hidden offers and error fares for the flights departing from ' + airportDetails.name + '. Don\'t miss an incredible cheap flight deal to your dream destination. Join thousands of other members, saving an average of $489 per ticket booked!'}>
 
-                <section className="section section--top about">
+                <section className="section section--top">
                     <div className="container">
 
                         <div className="heading-primary heading-primary--premium text-center">
@@ -68,6 +79,15 @@ const Deals = ({from_airport, flights, airportDetails}) => {
                                     isAirportDeal={true}
                                 />
                             )}
+                        </div>
+
+                        {/* Subscribe Form */}
+
+                        <div className="cta-section">
+                            <h3>Never miss out on any deal! Get exclusive Cheap Flight Alerts right to your inbox.</h3>
+                            <SubscribeForm
+                                btnText="Send me cheap flight deals"
+                            />
                         </div>
 
                     </div>
