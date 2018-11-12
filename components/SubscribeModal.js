@@ -56,7 +56,7 @@ class SubscribeModal extends Component {
                     </div>
 
                     <SubscribeForm
-                        btnText="Send me cheap flight alerts today!"
+                        btnText="Send flight alerts today!"
                     />
 
                     <span

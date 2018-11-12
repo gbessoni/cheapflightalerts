@@ -35,6 +35,12 @@ app.prepare()
             app.render(req, res, actualPath, queryParams);
         });
 
+        server.get('/unsubscribe/:persistence_token', (req, res) => {
+            const actualPath = '/unsubscribe';
+            const queryParams = {persistence_token: req.params.persistence_token};
+            app.render(req, res, actualPath, queryParams);
+        });
+
         server.get('/email_confirm/:persistence_token', (req, res) => {
             const actualPath = '/email_confirm';
             const queryParams = {persistence_token: req.params.persistence_token};

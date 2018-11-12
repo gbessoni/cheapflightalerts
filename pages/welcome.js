@@ -29,8 +29,15 @@ const Welcome = ({airport, persistenceToken}) => {
 
                         {/* Airport Form */}
 
-                        <p>
-                            Please enter in your preferred departure airport:
+                        <p className="text-center large-sm">
+                            { airport? (
+                                <span>
+                                    Your current department airport is <span className="color-text">{airport}</span>.
+                                </span>
+                            ) : (
+                                <div>Please enter in your preferred departure airport:</div>
+                            )
+                            }
                         </p>
 
                         <AirportForm
@@ -134,15 +141,20 @@ Welcome.getInitialProps = async function (ctx) {
     const {persistence_token} = ctx.query;
 
     if (persistence_token) {
+        let airport;
 
-        const response = await axios.get(`${API}/basic/preferences/${persistence_token}`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json; version=1'
-            }
-        });
+        try{
+            const response = await axios.get(`${API}/basic/preferences/${persistence_token}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json; version=1'
+                }
+            });
 
-        const airport = response.data.preference.departure_airport;
+            airport = response.data.preference.departure_airport;
+        } catch (error) {
+
+        }
 
         return {
             airport,

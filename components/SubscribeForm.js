@@ -3,17 +3,55 @@ import axios from 'axios';
 import {API} from '../config';
 import Router from 'next/router';
 import {getCookie} from '../utils/cookie-default';
+import {airports, getSuggestions} from '../utils/autosuggest';
+import Autosuggest from './UI/Autosuggest';
+import {getAirportNameFromCode} from '../utils/autosuggest';
+
 
 class SubscribeForm extends Component {
 
     state = {
         email: '',
         isSubscribed: false,
-        isError: false
+        isError: false,
+        suggestions: [],
+        airport: this.props.airport && getAirportNameFromCode(this.props.airport) || '',
+        airportCode: this.props.airport || '',
+        isAirportEmtpy: false
     };
 
     handleChange = (e) => {
         this.setState({email: e.target.value});
+    };
+
+    handleAutosuggestChange = (e, {newValue}) => {
+        this.setState({airport: newValue});
+    };
+
+    onFetchSuggestions = ({value}) => {
+        this.setState({
+            suggestions: getSuggestions(value)
+        });
+    };
+
+    onClearSuggestions = () => {
+        this.setState({
+            suggestions: []
+        });
+    };
+
+    onSuggestionSelected = () => {
+        setTimeout(() => {
+
+            const airportValue = this.state.airport;
+
+            const airport = airports.find(x => {
+                return x.name === airportValue;
+            });
+
+            this.setState({airportCode: airport.iata});
+
+        }, 100);
     };
 
     handleSubmit = (e) => {
@@ -29,6 +67,7 @@ class SubscribeForm extends Component {
 
             axios.post(`${API}/basic/sign_up`, {
                 email: this.state.email,
+                departure_airport: this.state.airportCode,
                 source
             }, {
                 headers: {
@@ -43,7 +82,7 @@ class SubscribeForm extends Component {
                     Router.push(`/welcome?persistence_token=${persistenceToken}`);
                 })
                 .catch(error => {
-                    this.setState({isError: true, isSubscribed: false, msg: 'This email is already used'});
+                    this.setState({isError: true, isSubscribed: false, msg: 'This email is already used.'});
                 });
         }
     };
@@ -54,12 +93,12 @@ class SubscribeForm extends Component {
 
         return (
             <div>
-                <form onSubmit={this.handleSubmit} className="subscribe-form text-center">
+                <form onSubmit={this.handleSubmit} className="subscribe-form">
 
                     <div className="form-group">
                         <input
                             type="email"
-                            placeholder="Enter your BEST email for cheap flight deals"
+                            placeholder="Enter email address"
                             onChange={this.handleChange}
                             className={'form-control ' + [isError && 'with-error', isSubscribed && 'with-success'].filter(e => !!e).join(' ')}
                         />
@@ -68,6 +107,20 @@ class SubscribeForm extends Component {
                     </div>
 
                     <div className="form-group">
+                        <Autosuggest
+                            suggestions={this.state.suggestions}
+                            onFetchSuggestions={this.onFetchSuggestions}
+                            onClearSuggestions={this.onClearSuggestions}
+                            onSuggestionSelected={this.onSuggestionSelected}
+                            onChange={this.handleAutosuggestChange}
+                            placeholder="Enter departure city or airport"
+                            value={this.state.airport}
+                            id="airportAutosuggest"
+                            name="airport"
+                        />
+                    </div>
+
+                    <div className="form-group text-center">
                         <button
                             type="submit"
                             className="btn btn-primary"
