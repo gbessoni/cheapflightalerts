@@ -22,7 +22,7 @@ const Unsubscribe = ({persistenceToken, status}) => {
                         </div>
 
                         <div className="large-sm">
-                            {!status ? (
+                            {status ? (
                                 <span>You have unsubscribed successfully.
                                     You won't cheap flight alerts fom now on 😞
                                     <br/>
